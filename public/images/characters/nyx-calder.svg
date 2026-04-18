@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1200">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#110f1d" />
+      <stop offset="54%" stop-color="#2a2756" />
+      <stop offset="100%" stop-color="#cf4f6c" />
+    </linearGradient>
+  </defs>
+  <rect width="900" height="1200" fill="#080911" />
+  <rect x="34" y="34" width="832" height="1132" rx="34" fill="url(#bg)" />
+  <circle cx="642" cy="258" r="152" fill="#f6d1df" opacity="0.16" />
+  <path d="M214 1064c54-180 102-308 144-382 56-96 128-146 216-150 60-2 116 18 168 60l82 472Z" fill="#10111b" opacity="0.9" />
+  <path d="M352 442c0-56 40-98 104-98 58 0 104 42 104 98 0 58-46 98-104 98-64 0-104-40-104-98Z" fill="#1f2030" />
+  <path d="M388 436c48-24 96-24 144 0l-34 38c-26-8-54-8-82 0Z" fill="#f4d5df" />
+  <text x="94" y="950" fill="#f6e1ea" font-family="Baskerville, serif" font-size="96">Nyx Calder</text>
+  <text x="98" y="1028" fill="#eeb3c4" font-family="Arial, sans-serif" font-size="29" letter-spacing="8">ECLIPSE COURIER</text>
+</svg>

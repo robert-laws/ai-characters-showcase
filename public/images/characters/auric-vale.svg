@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1200">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2d1630" />
+      <stop offset="55%" stop-color="#7a2338" />
+      <stop offset="100%" stop-color="#f0b56c" />
+    </linearGradient>
+  </defs>
+  <rect width="900" height="1200" fill="#0f1016" />
+  <rect x="34" y="34" width="832" height="1132" rx="34" fill="url(#bg)" />
+  <circle cx="640" cy="300" r="168" fill="rgba(255,255,255,0.14)" />
+  <path d="M232 1000c36-184 88-320 156-406 46-58 99-86 157-86 60 0 108 30 144 90 56 94 94 228 114 402Z" fill="#17141f" opacity="0.84" />
+  <path d="M362 432c0-62 39-104 98-104s98 42 98 104-39 102-98 102-98-40-98-102Z" fill="#f6d4a0" opacity="0.9" />
+  <path d="M356 362c58-28 121-28 188 0l-20 44c-49-17-98-18-148-2Z" fill="#f5c279" />
+  <text x="94" y="950" fill="#f8e6cb" font-family="Baskerville, serif" font-size="98">Auric Vale</text>
+  <text x="98" y="1028" fill="#f7d3a2" font-family="Arial, sans-serif" font-size="30" letter-spacing="8">SALVAGE PRINCE</text>
+</svg>

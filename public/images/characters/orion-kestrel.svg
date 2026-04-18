@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1200">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10161d" />
+      <stop offset="60%" stop-color="#2f4a56" />
+      <stop offset="100%" stop-color="#86c0ca" />
+    </linearGradient>
+  </defs>
+  <rect width="900" height="1200" fill="#090c11" />
+  <rect x="34" y="34" width="832" height="1132" rx="34" fill="url(#bg)" />
+  <path d="M152 1006c62-188 118-310 168-366 58-64 124-96 198-96 62 0 118 24 168 72 54 52 94 116 120 194v196Z" fill="#121821" opacity="0.88" />
+  <circle cx="456" cy="334" r="110" fill="#d8eef2" opacity="0.68" />
+  <circle cx="418" cy="330" r="10" fill="#1d2b34" />
+  <circle cx="494" cy="330" r="10" fill="#1d2b34" />
+  <path d="M396 396c38 16 76 16 120 0" fill="none" stroke="#20363f" stroke-width="14" stroke-linecap="round" />
+  <text x="94" y="948" fill="#eef6f7" font-family="Baskerville, serif" font-size="94">Orion Kestrel</text>
+  <text x="98" y="1026" fill="#cae7ea" font-family="Arial, sans-serif" font-size="27" letter-spacing="8">SYNTHETIC INVESTIGATOR</text>
+</svg>

@@ -1,0 +1,52 @@
+---
+import "../styles/global.css";
+
+const {
+  title = "AI Characters Showcase",
+  description = "A cinematic archive of AI-generated character dossiers.",
+  pageClass = ""
+} = Astro.props;
+
+const basePath = import.meta.env.BASE_URL;
+const canonical = new URL(Astro.url.pathname, Astro.site ?? Astro.url).toString();
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="icon" type="image/svg+xml" href={`${basePath}favicon.svg`} />
+    <link rel="canonical" href={canonical} />
+    <title>{title}</title>
+  </head>
+  <body class={pageClass}>
+    <div class="page-shell">
+      <div class="page-shell__glow page-shell__glow--left"></div>
+      <div class="page-shell__glow page-shell__glow--right"></div>
+
+      <header class="site-header">
+        <a class="site-header__brand" href={basePath}>
+          <span class="site-header__mark">AI</span>
+          <span class="site-header__title">Characters Showcase</span>
+        </a>
+
+        <nav class="site-nav" aria-label="Primary">
+          <a href={basePath}>Archive</a>
+          <a href={`${basePath}#signals`}>Signals</a>
+          <a href={`${basePath}#field-notes`}>Field Notes</a>
+        </nav>
+      </header>
+
+      <main>
+        <slot />
+      </main>
+
+      <footer class="site-footer">
+        <p>Built as a public GitHub Pages archive for cinematic AI character concepts.</p>
+      </footer>
+    </div>
+  </body>
+</html>

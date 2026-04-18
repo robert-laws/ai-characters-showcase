@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1200">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f1f28" />
+      <stop offset="56%" stop-color="#1d5f78" />
+      <stop offset="100%" stop-color="#7fd0d7" />
+    </linearGradient>
+  </defs>
+  <rect width="900" height="1200" fill="#081117" />
+  <rect x="34" y="34" width="832" height="1132" rx="34" fill="url(#bg)" />
+  <path d="M92 864c114-72 210-96 286-72 58 18 112 18 162 0 72-26 150-18 234 24v280H92Z" fill="#0c1a22" opacity="0.9" />
+  <circle cx="458" cy="316" r="102" fill="#e0fbff" opacity="0.76" />
+  <path d="M178 784c132-40 258-40 378 0" fill="none" stroke="#d7f7f8" stroke-width="26" stroke-linecap="round" opacity="0.46" />
+  <path d="M254 834c170-28 310-18 418 28" fill="none" stroke="#91d9df" stroke-width="16" stroke-linecap="round" opacity="0.58" />
+  <text x="94" y="952" fill="#eefcff" font-family="Baskerville, serif" font-size="94">Cassian Reef</text>
+  <text x="98" y="1030" fill="#c4edf0" font-family="Arial, sans-serif" font-size="28" letter-spacing="8">TIDE SMUGGLER</text>
+</svg>

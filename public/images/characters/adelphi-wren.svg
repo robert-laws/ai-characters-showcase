@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1200">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#261a12" />
+      <stop offset="58%" stop-color="#6e3a1b" />
+      <stop offset="100%" stop-color="#efb565" />
+    </linearGradient>
+  </defs>
+  <rect width="900" height="1200" fill="#0f0b09" />
+  <rect x="34" y="34" width="832" height="1132" rx="34" fill="url(#bg)" />
+  <path d="M174 1020c36-144 82-260 138-348 82-128 180-192 294-192 70 0 134 20 192 60l54 480Z" fill="#1a120d" opacity="0.9" />
+  <circle cx="450" cy="324" r="102" fill="#fee0b7" opacity="0.82" />
+  <path d="M302 728c88-62 186-104 294-126l14 44c-94 24-182 64-264 118Z" fill="#ffdf9a" opacity="0.54" />
+  <path d="M266 812h366" stroke="#ffd08d" stroke-width="18" stroke-linecap="round" opacity="0.58" />
+  <text x="94" y="952" fill="#ffeacc" font-family="Baskerville, serif" font-size="94">Adelphi Wren</text>
+  <text x="98" y="1030" fill="#ffd0a3" font-family="Arial, sans-serif" font-size="28" letter-spacing="8">EMBER ARCHIVIST</text>
+</svg>

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1200">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#173028" />
+      <stop offset="60%" stop-color="#2e6d51" />
+      <stop offset="100%" stop-color="#d9ca87" />
+    </linearGradient>
+  </defs>
+  <rect width="900" height="1200" fill="#0c100f" />
+  <rect x="34" y="34" width="832" height="1132" rx="34" fill="url(#bg)" />
+  <path d="M130 1080c76-202 154-330 236-382 44-28 88-42 132-42 78 0 146 42 206 126 48 68 88 168 118 298Z" fill="#14201a" opacity="0.82" />
+  <circle cx="452" cy="352" r="106" fill="#f0eab9" opacity="0.82" />
+  <path d="M278 618c74-66 138-102 192-108 74-8 138 32 194 118-42 28-104 54-186 78-84-18-150-48-200-88Z" fill="#b8d49d" opacity="0.54" />
+  <path d="M228 744c134-18 268-18 402 0v34H228Z" fill="#e8df98" opacity="0.62" />
+  <text x="94" y="946" fill="#f3efce" font-family="Baskerville, serif" font-size="96">Imani Rhex</text>
+  <text x="98" y="1024" fill="#dce7b3" font-family="Arial, sans-serif" font-size="28" letter-spacing="8">BIOME ENGINEER</text>
+</svg>

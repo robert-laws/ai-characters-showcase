@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1200">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1b1b28" />
+      <stop offset="56%" stop-color="#4c4d74" />
+      <stop offset="100%" stop-color="#f2d8a2" />
+    </linearGradient>
+  </defs>
+  <rect width="900" height="1200" fill="#090a10" />
+  <rect x="34" y="34" width="832" height="1132" rx="34" fill="url(#bg)" />
+  <path d="M160 1022c56-158 118-274 186-348 80-86 166-130 258-130 86 0 162 36 230 108l28 370Z" fill="#11131b" opacity="0.92" />
+  <circle cx="452" cy="312" r="102" fill="#fff0cf" opacity="0.86" />
+  <path d="M194 416c104 18 190 74 258 168 74-94 160-150 258-168-76 84-152 188-228 312h-60C346 600 270 496 194 416Z" fill="#eee5cf" opacity="0.36" />
+  <path d="M356 770c68-20 134-20 198 0" fill="none" stroke="#fff0cf" stroke-width="18" stroke-linecap="round" opacity="0.52" />
+  <text x="94" y="950" fill="#fff1d6" font-family="Baskerville, serif" font-size="100">Seraph-IX</text>
+  <text x="98" y="1028" fill="#ead9b5" font-family="Arial, sans-serif" font-size="28" letter-spacing="8">FALLEN CELESTIAL</text>
+</svg>

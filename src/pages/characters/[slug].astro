@@ -1,0 +1,123 @@
+---
+import { getCollection, render } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+export async function getStaticPaths() {
+  const characters = await getCollection("characters");
+
+  return characters.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry, characters }
+  }));
+}
+
+const { entry, characters } = Astro.props;
+const { Content } = await render(entry);
+const basePath = import.meta.env.BASE_URL;
+
+const related = characters
+  .filter((candidate) => candidate.id !== entry.id)
+  .map((candidate) => ({
+    entry: candidate,
+    overlap: candidate.data.tags.filter((tag) => entry.data.tags.includes(tag)).length
+  }))
+  .filter(({ overlap }) => overlap > 0)
+  .sort((left, right) => right.overlap - left.overlap)
+  .slice(0, 3);
+---
+
+<BaseLayout
+  title={`${entry.data.name} | AI Characters Showcase`}
+  description={entry.data.shortDescription}
+  pageClass="page-dossier"
+>
+  <section class="dossier-hero">
+    <div class="dossier-hero__poster">
+      <img
+        src={`${basePath}${entry.data.heroImage.replace(/^\//, "")}`}
+        alt={`${entry.data.name} dossier art`}
+      />
+    </div>
+
+    <div class="dossier-hero__body">
+      <p class="eyebrow">Dossier / {entry.slug}</p>
+      <h1>{entry.data.name}</h1>
+      <p class="dossier-hero__role">{entry.data.role}</p>
+      <p class="dossier-hero__summary">{entry.data.shortDescription}</p>
+
+      <dl class="dossier-grid">
+        {entry.data.world && (
+          <div>
+            <dt>World</dt>
+            <dd>{entry.data.world}</dd>
+          </div>
+        )}
+        {entry.data.region && (
+          <div>
+            <dt>Region</dt>
+            <dd>{entry.data.region}</dd>
+          </div>
+        )}
+        {entry.data.faction && (
+          <div>
+            <dt>Faction</dt>
+            <dd>{entry.data.faction}</dd>
+          </div>
+        )}
+        <div>
+          <dt>Signals</dt>
+          <dd>{entry.data.tags.join(" / ")}</dd>
+        </div>
+      </dl>
+
+      {entry.data.featuredQuote && <blockquote class="dossier-quote">{entry.data.featuredQuote}</blockquote>}
+
+      <div class="dossier-hero__actions">
+        <a class="button button--primary" href={basePath}>Back to archive</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section dossier-section">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">Field Narrative</p>
+        <h2>Long-form profile</h2>
+      </div>
+      <p class="section-heading__text">
+        Each dossier page is designed to hold lore, tone, and future media without collapsing the archive back into a single wall.
+      </p>
+    </div>
+
+    <article class="prose-card">
+      <Content />
+    </article>
+  </section>
+
+  {related.length > 0 && (
+    <section class="section dossier-section">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Related Signals</p>
+          <h2>Adjacent dossiers</h2>
+        </div>
+      </div>
+
+      <div class="related-grid">
+        {related.map(({ entry: relatedEntry }) => (
+          <a class="related-card" href={`${basePath}characters/${relatedEntry.slug}/`}>
+            <img
+              src={`${basePath}${relatedEntry.data.heroImage.replace(/^\//, "")}`}
+              alt={`${relatedEntry.data.name} poster art`}
+              loading="lazy"
+            />
+            <div>
+              <p>{relatedEntry.data.role}</p>
+              <h3>{relatedEntry.data.name}</h3>
+            </div>
+          </a>
+        ))}
+      </div>
+    </section>
+  )}
+</BaseLayout>

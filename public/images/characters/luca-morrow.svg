@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1200">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#101b16" />
+      <stop offset="58%" stop-color="#30513d" />
+      <stop offset="100%" stop-color="#98c38d" />
+    </linearGradient>
+  </defs>
+  <rect width="900" height="1200" fill="#080d0b" />
+  <rect x="34" y="34" width="832" height="1132" rx="34" fill="url(#bg)" />
+  <path d="M126 1038c112-214 204-342 276-384 44-26 88-38 132-38 76 0 154 42 234 126l42 296Z" fill="#101814" opacity="0.92" />
+  <circle cx="450" cy="328" r="100" fill="#e4f4d8" opacity="0.74" />
+  <path d="M216 262c86 30 166 78 240 144 58-74 128-126 210-156" fill="none" stroke="#d6edc4" stroke-width="18" stroke-linecap="round" opacity="0.42" />
+  <path d="M308 778c92-46 196-54 314-24" fill="none" stroke="#d7f0c7" stroke-width="22" stroke-linecap="round" opacity="0.46" />
+  <text x="94" y="952" fill="#f0f9e5" font-family="Baskerville, serif" font-size="94">Luca Morrow</text>
+  <text x="98" y="1030" fill="#d6eecf" font-family="Arial, sans-serif" font-size="28" letter-spacing="8">GHOST GARDENER</text>
+</svg>

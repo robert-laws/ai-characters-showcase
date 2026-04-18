@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1200">
+  <defs>
+    <linearGradient id="bg" x1="10%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#101b2f" />
+      <stop offset="58%" stop-color="#3c4f86" />
+      <stop offset="100%" stop-color="#8cd6d7" />
+    </linearGradient>
+  </defs>
+  <rect width="900" height="1200" fill="#0d1118" />
+  <rect x="34" y="34" width="832" height="1132" rx="34" fill="url(#bg)" />
+  <path d="M108 842c116-94 202-138 258-130 98 12 152-106 244-106 66 0 124 24 174 70v324H108Z" fill="#0f1828" opacity="0.84" />
+  <circle cx="478" cy="362" r="116" fill="#eaf4ff" opacity="0.78" />
+  <path d="M300 620c82-136 146-204 194-204 48 0 114 66 196 198-38 52-102 80-192 84-88 4-154-22-198-78Z" fill="#172337" opacity="0.88" />
+  <path d="M352 388c72-56 150-56 234 0l-28 34c-60-34-118-34-176 0Z" fill="#d8edf7" opacity="0.72" />
+  <text x="94" y="948" fill="#eef6ff" font-family="Baskerville, serif" font-size="96">Selene Voss</text>
+  <text x="98" y="1026" fill="#d1f4f4" font-family="Arial, sans-serif" font-size="28" letter-spacing="8">MEMORY CARTOGRAPHER</text>
+</svg>
