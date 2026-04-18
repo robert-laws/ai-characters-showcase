@@ -9,6 +9,7 @@ const {
 
 const basePath = import.meta.env.BASE_URL;
 const canonical = new URL(Astro.url.pathname, Astro.site ?? Astro.url).toString();
+const currentYear = new Date().getFullYear();
 ---
 
 <!doctype html>
@@ -45,7 +46,34 @@ const canonical = new URL(Astro.url.pathname, Astro.site ?? Astro.url).toString(
       </main>
 
       <footer class="site-footer">
-        <p>Built as a public GitHub Pages archive for cinematic AI character concepts.</p>
+        <div class="site-footer__grid">
+          <section class="site-footer__brand-block">
+            <p class="site-footer__eyebrow">Archive Footer</p>
+            <h2>AI Characters Showcase</h2>
+            <p>
+              A public-facing dossier archive for colorful AI character concepts, built as a static Astro site and deployed on GitHub Pages.
+            </p>
+          </section>
+
+          <section class="site-footer__section">
+            <p class="site-footer__label">Explore</p>
+            <a href={basePath}>Archive Home</a>
+            <a href={`${basePath}#signals`}>Signal Filters</a>
+            <a href={`${basePath}#field-notes`}>Field Notes</a>
+          </section>
+
+          <section class="site-footer__section">
+            <p class="site-footer__label">Project</p>
+            <a href="https://robert-laws.github.io/ai-characters-showcase/">Live Site</a>
+            <a href="https://github.com/robert-laws/ai-characters-showcase">GitHub Repository</a>
+            <a href="https://github.com/robert-laws/ai-characters-showcase/actions/workflows/deploy.yml">Deployment Status</a>
+          </section>
+        </div>
+
+        <div class="site-footer__bar">
+          <p>&copy; {currentYear} AI Characters Showcase. Demo archive and visual concept site.</p>
+          <p>Built with Astro and published via GitHub Pages.</p>
+        </div>
       </footer>
     </div>
   </body>
