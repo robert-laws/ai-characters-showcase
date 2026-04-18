@@ -2,6 +2,10 @@
 
 `ai-characters-showcase` is a cinematic dossier-style website for presenting AI-generated character concepts as a browsable public archive. V1 is a static Astro site aimed at fans and casual browsers, with a gallery homepage, filter-chip browsing, and dedicated profile pages for each character.
 
+[![Deploy to GitHub Pages](https://github.com/robert-laws/ai-characters-showcase/actions/workflows/deploy.yml/badge.svg)](https://github.com/robert-laws/ai-characters-showcase/actions/workflows/deploy.yml)
+
+[Open the live site](https://robert-laws.github.io/ai-characters-showcase/)
+
 ## Stack
 
 - Astro static site
