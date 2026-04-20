@@ -1,160 +1,242 @@
 ---
-import { getCollection } from "astro:content";
-import CharacterCard from "../components/CharacterCard.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import MediaPlaceholder from "../components/MediaPlaceholder.astro";
+import { homeCatalog } from "../data/characterCatalog";
 
-const characters = (await getCollection("characters")).sort((left, right) => left.data.order - right.data.order);
-const tagOrder = ["Operative", "Mystic", "Outlaw", "Royal", "Synthetic", "Frontier", "Scholar"];
-const tags = tagOrder.filter((tag) => characters.some((entry) => entry.data.tags.includes(tag)));
-const featured = characters.slice(0, 3);
+const heroFeature = homeCatalog.hero;
+const selections = homeCatalog.selections;
+const latestDrops = homeCatalog.newArchive;
+const highlight = homeCatalog.highlight;
+const verticalFeature = homeCatalog.verticalFeature;
+const footerLandscape = homeCatalog.footerLandscape;
+const categories = homeCatalog.categoryTiles;
+const getPlaceholderImagePath = (entry, placeholder) =>
+  entry.images.find((image) => image.placeholder === placeholder)?.src ?? entry.primaryImage.src;
+const testimonials = [
+  {
+    title: "Collector Notes",
+    quote: "The catalog structure makes every character feel like part of a premium release instead of a loose gallery upload."
+  },
+  {
+    title: "Art Direction",
+    quote: "The numbered placeholder approach is perfect for iterating on imagery later without losing layout momentum."
+  },
+  {
+    title: "Worldbuilding",
+    quote: "This format gives the archive enough commerce-style rhythm to feel polished while still serving story and lore."
+  }
+];
 const basePath = import.meta.env.BASE_URL;
 ---
 
 <BaseLayout
   title="AI Characters Showcase"
   description="A gallery-first Astro website for cinematic AI-generated character dossiers."
-  pageClass="page-home"
+  pageClass="page-home page-home--catalog"
 >
-  <section class="hero">
-    <div class="hero__copy">
-      <p class="eyebrow">Public Archive 01</p>
-      <h1>AI-generated characters presented like classified legends, not stock gallery cards.</h1>
-      <p class="hero__lede">
-        Browse a curated dossier wall of operatives, royals, mystics, synthetics, and frontier ghosts. Each file opens into a dedicated profile page with lore, region data, and long-form field notes.
-      </p>
+  <section class="catalog-hero">
+    <div class="catalog-hero__media">
+      <MediaPlaceholder
+        number="01"
+        label={`${heroFeature.name} hero placeholder`}
+        aspect="hero"
+        tone="cool"
+        src={`${basePath}${heroFeature.primaryImage.src.replace(/^\//, "")}`}
+        alt={`${heroFeature.name} sample hero image`}
+      />
+    </div>
+    <div class="catalog-hero__copy">
+      <p class="catalog-kicker">Seasonal Character Edit</p>
+      <div class="catalog-hero__headline">
+        <p class="catalog-brand">AI Characters Showcase</p>
+        <h1>Reframing the archive like a premium release catalog.</h1>
+        <p>
+          This first adaptation borrows the editorial-commerce structure from your reference while keeping the current dossiers, tags, and profile routes intact.
+        </p>
+      </div>
 
-      <div class="hero__actions">
-        <a class="button button--primary" href="#signals">Browse dossiers</a>
-        <a class="button button--secondary" href={`${basePath}characters/${featured[0].slug}/`}>
-          Enter spotlight profile
+      <div class="catalog-hero__meta">
+        <div>
+          <p class="catalog-label">Lead feature</p>
+          <h2>{heroFeature.name}</h2>
+          <p>{heroFeature.category} / {heroFeature.species}</p>
+        </div>
+        <a class="button button--primary" href={`${basePath}characters/${heroFeature.slug}/`}>
+          Open lead dossier
         </a>
       </div>
-
-      <dl class="hero__stats">
-        <div>
-          <dt>Active dossiers</dt>
-          <dd>{characters.length}</dd>
-        </div>
-        <div>
-          <dt>Signal tags</dt>
-          <dd>{tags.length}</dd>
-        </div>
-        <div>
-          <dt>Worlds indexed</dt>
-          <dd>1</dd>
-        </div>
-      </dl>
     </div>
-
-    <aside class="hero__panel">
-      <p class="hero__panel-label">Spotlight transmission</p>
-      <img
-        class="hero__panel-image"
-        src={`${basePath}${featured[0].data.heroImage.replace(/^\//, "")}`}
-        alt={`${featured[0].data.name} spotlight art`}
-      />
-      <div class="hero__panel-body">
-        <p class="hero__panel-role">{featured[0].data.role}</p>
-        <h2>{featured[0].data.name}</h2>
-        <p>{featured[0].data.shortDescription}</p>
-        {featured[0].data.featuredQuote && <blockquote>{featured[0].data.featuredQuote}</blockquote>}
-      </div>
-    </aside>
   </section>
 
-  <section class="section section--signals" id="signals">
-    <div class="section-heading">
+  <section class="catalog-section">
+    <div class="catalog-section__heading">
       <div>
-        <p class="eyebrow">Signal Filters</p>
-        <h2>Browse the archive by archetype.</h2>
+        <p class="catalog-kicker">Current Release</p>
+        <h2>Spring file selections</h2>
       </div>
-      <p class="section-heading__text">
-        V1 keeps the interaction deliberately light: tap a signal and the wall narrows to matching dossiers.
+      <p>
+        The first row mirrors the product-grid rhythm from the reference, but each card maps to an existing dossier and detail page.
       </p>
     </div>
 
-    <div class="filter-toolbar" data-filter-toolbar>
-      <div class="filter-toolbar__buttons">
-        <button type="button" class="filter-chip is-active" data-filter="All">All</button>
-        {tags.map((tag) => (
-          <button type="button" class="filter-chip" data-filter={tag}>
-            {tag}
-          </button>
-        ))}
-      </div>
-      <p class="filter-toolbar__status" data-filter-status>
-        Showing {characters.length} dossiers.
-      </p>
-    </div>
-
-    <div class="gallery-grid" data-gallery>
-      {characters.map((entry, index) => <CharacterCard entry={entry} featured={index === 0} />)}
+    <div class="catalog-grid catalog-grid--five">
+      {selections.map((entry, index) => (
+        <article class="catalog-card">
+          <a href={`${basePath}characters/${entry.slug}/`}>
+            <MediaPlaceholder
+              number={String(index + 2).padStart(2, "0")}
+              label={`${entry.name} product card placeholder`}
+              aspect="portrait"
+              tone={index % 2 === 0 ? "dark" : "cool"}
+              src={`${basePath}${getPlaceholderImagePath(entry, String(index + 2).padStart(2, "0")).replace(/^\//, "")}`}
+              alt={`${entry.name} selection sample image`}
+            />
+            <div class="catalog-card__body">
+              <p class="catalog-card__eyebrow">{entry.tags.map((tag) => tag.replace(/-/g, " ")).join(" / ")}</p>
+              <h3>{entry.name}</h3>
+              <p>{entry.category} / {entry.species}</p>
+            </div>
+          </a>
+        </article>
+      ))}
     </div>
   </section>
 
-  <section class="section section--notes" id="field-notes">
-    <div class="section-heading">
+  <section class="catalog-section" id="signals">
+    <div class="catalog-section__heading">
       <div>
-        <p class="eyebrow">Field Notes</p>
-        <h2>The archive is built for worldbuilding momentum.</h2>
+        <p class="catalog-kicker">Browse By Signal</p>
+        <h2>Shop the archive by category</h2>
       </div>
-      <p class="section-heading__text">
-        This first release is content-first: static deployment, structured dossiers, and room to expand into deeper timelines or process notes later.
-      </p>
+      <p>Each tile is a stand-in for future image-led category entry points. The count still reflects the real tagged dossiers already in the archive.</p>
     </div>
 
-    <div class="notes-grid">
-      <article class="note-card">
-        <h3>Structured for growth</h3>
-        <p>Every character is stored as local content with a stable slug, typed metadata, and a long-form body.</p>
-      </article>
-      <article class="note-card">
-        <h3>Pages over modals</h3>
-        <p>Profiles have their own routes so each dossier can carry biography, setting context, and future gallery images.</p>
-      </article>
-      <article class="note-card">
-        <h3>Portable deployment</h3>
-        <p>The full site ships as a static build that fits GitHub Pages cleanly without server dependencies.</p>
-      </article>
+    <div class="category-grid">
+      {categories.map((category, index) => (
+        <article class="category-tile">
+          <MediaPlaceholder
+            number={category.placeholder}
+            label={`${category.category} category placeholder`}
+            aspect="square"
+            tone={index % 3 === 0 ? "warm" : "cool"}
+            src={`${basePath}${category.image.src.replace(/^\//, "")}`}
+            alt={`${category.category} category sample image`}
+          />
+          <div class="category-tile__body">
+            <h3>{category.category}</h3>
+            <p>{category.name}</p>
+          </div>
+        </article>
+      ))}
     </div>
   </section>
 
-  <script is:inline>
-    const cards = Array.from(document.querySelectorAll("[data-card]"));
-    const buttons = Array.from(document.querySelectorAll("[data-filter]"));
-    const status = document.querySelector("[data-filter-status]");
+  <section class="catalog-section">
+    <div class="catalog-section__heading">
+      <div>
+        <p class="catalog-kicker">Recent Additions</p>
+        <h2>Shop new in the archive</h2>
+      </div>
+      <p>Another five-card run to mirror the second commerce rail in the reference while keeping the current character data central.</p>
+    </div>
 
-    const updateView = (activeFilter) => {
-      let visible = 0;
+    <div class="catalog-grid catalog-grid--five">
+      {latestDrops.map((entry, index) => (
+        <article class="catalog-card">
+          <a href={`${basePath}characters/${entry.slug}/`}>
+            <MediaPlaceholder
+              number={String(index + 13).padStart(2, "0")}
+              label={`${entry.name} new archive placeholder`}
+              aspect="portrait"
+              tone={index % 2 === 0 ? "cool" : "warm"}
+              src={`${basePath}${getPlaceholderImagePath(entry, String(index + 13).padStart(2, "0")).replace(/^\//, "")}`}
+              alt={`${entry.name} new archive sample image`}
+            />
+            <div class="catalog-card__body">
+              <p class="catalog-card__eyebrow">{entry.category}</p>
+              <h3>{entry.name}</h3>
+              <p>{entry.summary}</p>
+            </div>
+          </a>
+        </article>
+      ))}
+    </div>
+  </section>
 
-      cards.forEach((card) => {
-        const cardTags = (card.getAttribute("data-tags") || "").split("|").filter(Boolean);
-        const matches = activeFilter === "All" || cardTags.includes(activeFilter);
+  <section class="catalog-section catalog-section--testimonials">
+    <div class="catalog-section__heading catalog-section__heading--centered">
+      <div>
+        <p class="catalog-kicker">Feedback Loop</p>
+        <h2>Our visitors say</h2>
+      </div>
+    </div>
 
-        card.toggleAttribute("hidden", !matches);
+    <div class="testimonial-grid">
+      {testimonials.map((testimonial) => (
+        <article class="testimonial-card">
+          <p class="testimonial-card__title">{testimonial.title}</p>
+          <p>{testimonial.quote}</p>
+        </article>
+      ))}
+    </div>
+  </section>
 
-        if (matches) {
-          visible += 1;
-        }
-      });
+  <section class="editorial-band">
+    <div class="editorial-band__copy">
+      <p class="catalog-kicker">Campaign Feature</p>
+      <h2>{highlight.name}, recast as a full-width editorial story.</h2>
+      <p>
+        This band stands in for the oversized photographic modules in the reference. Placeholder 18 can later become a campaign still, a collage, or a motion frame.
+      </p>
+    </div>
+    <MediaPlaceholder
+      number="18"
+      label={`${highlight.name} editorial banner placeholder`}
+      aspect="banner"
+      tone="dark"
+      src={`${basePath}${highlight.primaryImage.src.replace(/^\//, "")}`}
+      alt={`${highlight.name} editorial banner image`}
+    />
+  </section>
 
-      buttons.forEach((button) => {
-        button.classList.toggle("is-active", button.getAttribute("data-filter") === activeFilter);
-      });
+  <section class="editorial-split" id="field-notes">
+    <div class="editorial-split__copy">
+      <p class="catalog-kicker">Layout Translation</p>
+      <h2>Content crossover without losing the dossier logic.</h2>
+      <p>
+        The structure now follows an editorial storefront rhythm, but each section still cross-links back to the existing character archive instead of pretending to be static mock content.
+      </p>
+      <ul class="editorial-split__list">
+        <li>Placeholder 19 can become an anchored portrait or lookbook crop.</li>
+        <li>The metadata blocks can later evolve into pricing, editions, or release tags if you want a harder commerce feel.</li>
+        <li>All cards still point to the existing dossier routes, so the current content model remains useful.</li>
+      </ul>
+    </div>
+    <MediaPlaceholder
+      number="19"
+      label={`${verticalFeature.name} vertical feature placeholder`}
+      aspect="tall"
+      tone="warm"
+      src={`${basePath}${verticalFeature.primaryImage.src.replace(/^\//, "")}`}
+      alt={`${verticalFeature.name} vertical feature image`}
+    />
+  </section>
 
-      if (status) {
-        const suffix = visible === 1 ? "" : "s";
-        status.textContent =
-          activeFilter === "All"
-            ? `Showing ${visible} dossier${suffix}.`
-            : `Showing ${visible} ${activeFilter.toLowerCase()} dossier${suffix}.`;
-      }
-    };
-
-    buttons.forEach((button) => {
-      button.addEventListener("click", () => {
-        updateView(button.getAttribute("data-filter") || "All");
-      });
-    });
-  </script>
+  <section class="footer-feature">
+    <MediaPlaceholder
+      number="20"
+      label="Footer campaign landscape placeholder"
+      aspect="wide"
+      tone="cool"
+      src={`${basePath}${footerLandscape.src.replace(/^\//, "")}`}
+      alt="Footer campaign landscape image"
+    />
+    <div class="footer-feature__copy">
+      <p class="catalog-kicker">Next Iteration</p>
+      <h2>Placeholder 20 closes the page like a campaign footer.</h2>
+      <p>
+        Once this structure feels right, we can refine the spacing, convert placeholders into real asset slots, and decide which sections should stay editorial versus become functional archive navigation.
+      </p>
+    </div>
+  </section>
 </BaseLayout>

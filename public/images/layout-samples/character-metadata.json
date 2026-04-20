@@ -1,0 +1,889 @@
+[
+  {
+    "id": "01-auric-vale-hero",
+    "filename": "01-auric-vale-hero.jpg",
+    "placeholder": "01",
+    "name": "Auric Vale",
+    "imageType": "hero",
+    "species": "Human",
+    "age": 67,
+    "gender": "Male",
+    "category": "Frontier",
+    "appearance": {
+      "hair": "Long silver-white, swept back",
+      "beard": "Full white beard, thick and imposing",
+      "eyes": "Deep-set, amber, intense",
+      "build": "Broad-shouldered, weathered",
+      "distinguishingFeatures": "Horned battle helmet with a glowing amber rune gem at the crown, fur-lined dark cloak with small beast-claw clasps",
+      "palette": "Dark slate, bone-white, ember orange"
+    },
+    "backstory": "Once the most feared warlord in the Northern Reaches, Auric Vale earned his name by turning battlefields into ash — 'auric' for the gold he looted, 'vale' for the valleys he left empty. After watching his entire warband slain by a force he could not see or fight, Vale underwent a long, silent transformation. He burned his old standards and walked into the frost alone. Decades later he resurfaces as a reluctant arbiter — someone who has seen enough war to know when it is coming and who to stop it.",
+    "attributes": {
+      "strength": 9,
+      "intelligence": 7,
+      "agility": 5,
+      "charisma": 6,
+      "endurance": 10,
+      "magic": 3
+    },
+    "strengths": [
+      "Unbreakable physical durability — has survived conditions that would kill most",
+      "Deep tactical instinct honed over four decades of warfare",
+      "Commanding presence that can silence a room or a battlefield",
+      "Resistant to fear-based magic due to decades of psychological hardening"
+    ],
+    "weaknesses": [
+      "Slow to trust allies — often acts alone when teamwork would be more effective",
+      "Carries unresolved guilt that can be weaponised against him",
+      "Limited ranged capability",
+      "Struggles to adapt to fast-paced technological or arcane environments"
+    ],
+    "abilities": [
+      "Ember Roar — a shout that disrupts enemy formations and shatters weak enchantments",
+      "Iron Vigil — enters a trance-like focus that makes him nearly impervious to pain for a short duration",
+      "Warlord's Reckoning — reads the battlefield and reveals enemy weak points to allies"
+    ],
+    "tags": ["warrior", "elder", "frontier", "veteran", "horn-helmet"]
+  },
+  {
+    "id": "02-auric-vale-product-card",
+    "filename": "02-auric-vale-product-card.jpg",
+    "placeholder": "02",
+    "name": "Auric Vale",
+    "imageType": "product-card",
+    "species": "Human",
+    "age": 22,
+    "gender": "Female",
+    "category": "Royal",
+    "appearance": {
+      "hair": "Long black, flowing loosely over shoulders",
+      "eyes": "Warm brown, calm and perceptive",
+      "build": "Slender, poised",
+      "distinguishingFeatures": "Thin gold diadem crown, rust-orange flowing dress with a wide leather belt bearing a large circular buckle, teardrop pendant necklace, gold hoop earrings",
+      "palette": "Rust orange, gold, deep blue-grey candlelight"
+    },
+    "backstory": "The keeper of the Vale Archives — a sacred hall of records built within an ancient temple — this young scholar bears the title 'Auric' as a designation of guardianship, not bloodline. Trained from childhood to memorise the oral histories of twelve fallen kingdoms, she operates with quiet authority in a world that often overlooks her. She is the reason certain secrets survive at all.",
+    "attributes": {
+      "strength": 3,
+      "intelligence": 10,
+      "agility": 6,
+      "charisma": 8,
+      "endurance": 5,
+      "magic": 6
+    },
+    "strengths": [
+      "Encyclopaedic knowledge of historical events, lineages, and hidden treaties",
+      "Gifted mediator — able to find common ground between opposing factions",
+      "Calm under pressure, rarely rattled by intimidation",
+      "Access to rare documents and artefacts held in the Vale Archives"
+    ],
+    "weaknesses": [
+      "Limited combat capability",
+      "Over-reliance on logic can make her underestimate emotional or irrational actors",
+      "Her archive is a target — enemies often pursue her to gain or destroy information"
+    ],
+    "abilities": [
+      "Living Index — can recall and cross-reference vast amounts of historical knowledge instantly",
+      "Treaty Seal — invokes ancient binding agreements that hold legal power across realms",
+      "Candlelight Read — can decipher coded or obscured texts in near-darkness"
+    ],
+    "tags": ["scholar", "archivist", "royal", "keeper", "gold-diadem"]
+  },
+  {
+    "id": "03-selene-voss-product-card",
+    "filename": "03-selene-voss-product-card.jpg",
+    "placeholder": "03",
+    "name": "Selene Voss",
+    "imageType": "product-card",
+    "species": "Human",
+    "age": 29,
+    "gender": "Female",
+    "category": "Operative",
+    "appearance": {
+      "hair": "Long auburn-red, worn loose",
+      "eyes": "Large, dark, watchful behind round glasses",
+      "build": "Lean, composed",
+      "distinguishingFeatures": "Round tortoiseshell glasses, white lab coat over a black top, wristwatch, arms crossed in a thinking pose",
+      "palette": "Warm amber lamplight, chalk-white equations, dark glass bottles"
+    },
+    "backstory": "Selene Voss spent her early twenties cracking encryption systems for a private intelligence firm before realising her employers were selling the decrypted data to war profiteers. She walked out mid-contract, wiped three servers on her way out, and has been freelance ever since. Her lab is a converted pharmacy storeroom that smells of old chemicals and cold coffee. She will solve any problem — for the right price and the right cause.",
+    "attributes": {
+      "strength": 4,
+      "intelligence": 10,
+      "agility": 6,
+      "charisma": 7,
+      "endurance": 6,
+      "magic": 2
+    },
+    "strengths": [
+      "Exceptional cryptographic and systems analysis ability",
+      "Can improvise solutions with minimal resources",
+      "Highly observant — notices details others miss",
+      "Deep network of underground contacts and informants"
+    ],
+    "weaknesses": [
+      "Mistrustful of organisations and authority — difficult to work within formal structures",
+      "Prone to over-thinking, which can cause decision paralysis under time pressure",
+      "Limited physical combat ability",
+      "Her reputation precedes her — some factions will refuse to work with her"
+    ],
+    "abilities": [
+      "Signal Ghost — can intercept and reroute communications in real-time",
+      "Compound Analysis — identifies poisons, compounds, and materials on contact",
+      "Calculated Breach — finds the logical flaw in any security system within minutes"
+    ],
+    "tags": ["scientist", "cryptographer", "operative", "red-hair", "glasses", "lab-coat"]
+  },
+  {
+    "id": "04-kael-strand-product-card",
+    "filename": "04-kael-strand-product-card.jpg",
+    "placeholder": "04",
+    "name": "Kael Strand",
+    "imageType": "product-card",
+    "species": "Human",
+    "age": 44,
+    "gender": "Male",
+    "category": "Royal",
+    "appearance": {
+      "hair": "Dark brown, thick and slightly dishevelled",
+      "eyes": "Wide, haunted brown, perpetually on the verge of alarm",
+      "build": "Broad, once powerful, now heavy with tension",
+      "distinguishingFeatures": "Gold crown set with three large rubies, deep red cape with white ermine trim, creased face that speaks of sleepless nights",
+      "palette": "Warm crowd-blur background, gold, deep crimson"
+    },
+    "backstory": "Kael Strand inherited a crown he never wanted from a father who died before explaining what it actually meant. He has held the kingdom together for nineteen years through a combination of reluctant stubbornness and surprisingly good advisors. He is not a villain and not a hero — he is a man standing in front of a crowd that expects him to have answers he does not possess. He rules with a quiet desperation that his people have quietly mistaken for gravitas.",
+    "attributes": {
+      "strength": 6,
+      "intelligence": 7,
+      "agility": 4,
+      "charisma": 8,
+      "endurance": 6,
+      "magic": 1
+    },
+    "strengths": [
+      "Genuine empathy — truly cares about the welfare of his people",
+      "Politically astute, skilled at reading room dynamics and motivations",
+      "Commands loyalty through authenticity rather than fear",
+      "Has survived multiple assassination attempts through sheer luck and good instincts"
+    ],
+    "weaknesses": [
+      "Chronic self-doubt that can be exploited by manipulative advisors",
+      "Avoids decisive action under pressure, which can allow situations to escalate",
+      "No formal military or magical training",
+      "His visible anxiety makes him appear weak to hostile powers"
+    ],
+    "abilities": [
+      "Crown's Burden — inspires those around him to fight harder when all hope seems lost",
+      "People's Read — can accurately sense the mood of a crowd or population",
+      "Reluctant Command — his genuine hesitation paradoxically disarms aggression in negotiation"
+    ],
+    "tags": ["king", "royal", "reluctant-ruler", "crown", "dark-hair"]
+  },
+  {
+    "id": "05-imani-rhex-product-card",
+    "filename": "05-imani-rhex-product-card.jpg",
+    "placeholder": "05",
+    "name": "Imani Rhex",
+    "imageType": "product-card",
+    "species": "Human",
+    "age": 24,
+    "gender": "Female",
+    "category": "Outlaw",
+    "appearance": {
+      "hair": "Long black locs with burnt-orange beaded accents, worn half up",
+      "eyes": "Dark brown, direct and self-assured",
+      "build": "Athletic, confident posture",
+      "distinguishingFeatures": "Large gold hoop earrings, raw crystal pendant necklace, black tank top, tattoo sleeve on right arm with tribal/geometric patterns, warm sunset street setting",
+      "palette": "Warm amber dusk, black, copper-gold"
+    },
+    "backstory": "Imani Rhex grew up navigating the grey-market supply chains of a sprawling port city, learning early that the rules were written by people who didn't have to follow them. By sixteen she was running courier routes for three competing factions simultaneously, carefully playing each against the others. Now she operates as an independent broker of difficult-to-acquire goods and information — not quite a thief, not quite legal, entirely her own authority.",
+    "attributes": {
+      "strength": 7,
+      "intelligence": 8,
+      "agility": 9,
+      "charisma": 8,
+      "endurance": 7,
+      "magic": 0
+    },
+    "strengths": [
+      "Exceptional situational awareness and reflexes",
+      "Deep knowledge of urban environments, smuggling routes, and hidden networks",
+      "Resourceful — can improvise a solution from almost nothing",
+      "Highly persuasive and difficult to read or manipulate"
+    ],
+    "weaknesses": [
+      "Operates outside any formal alliance, meaning she has few guaranteed backup options",
+      "Sometimes over-negotiates, pushing situations to breaking point",
+      "No magical or technological special abilities — pure human skill",
+      "Trust is hard-earned and rarely extended"
+    ],
+    "abilities": [
+      "Ghost Route — can navigate any urban environment without being tracked or observed",
+      "Double-Cross — identifies betrayal or deception before it lands",
+      "Market Pulse — has an uncanny read on value, rarity, and demand of any item or intel"
+    ],
+    "tags": ["outlaw", "broker", "street-smart", "locs", "tattoo", "crystal-pendant"]
+  },
+  {
+    "id": "06-nyx-calder-product-card",
+    "filename": "06-nyx-calder-product-card.jpg",
+    "placeholder": "06",
+    "name": "Nyx Calder",
+    "imageType": "product-card",
+    "species": "Human",
+    "age": 21,
+    "gender": "Female",
+    "category": "Mystic",
+    "appearance": {
+      "hair": "Long black, perfectly straight, parted in the centre",
+      "eyes": "Deep brown, calm and focused",
+      "build": "Slender, still",
+      "distinguishingFeatures": "Rust-brown hooded cloak, bare hands cupping a living flame, dark forest background with scattered floating lights and a visible skull",
+      "palette": "Deep forest dark, warm amber flame, earthy rust"
+    },
+    "backstory": "Nyx Calder was declared dead at birth — twice. Both times she was revived by accident, once by a midwife's panic and once by a lightning strike at age seven. After the second incident, fire began responding to her emotions without invitation. She sought out the old forest mystics not to learn magic but to understand what she already was. They told her she exists at the threshold between states — alive but marked by the other side. She has made peace with that.",
+    "attributes": {
+      "strength": 4,
+      "intelligence": 8,
+      "agility": 6,
+      "charisma": 7,
+      "endurance": 6,
+      "magic": 10
+    },
+    "strengths": [
+      "Innate pyrokinesis — fire responds to her will without ritual or casting",
+      "Connection to liminal forces gives her awareness of hidden or spiritual presences",
+      "Unusually calm in situations that would destabilise others",
+      "Can commune with entities that exist between life and death"
+    ],
+    "weaknesses": [
+      "Her powers intensify dangerously when she loses emotional control",
+      "Isolation has left gaps in her practical survival and social skills",
+      "Spiritually visible — those who can sense magical signatures can always find her",
+      "Water and cold environments suppress her abilities significantly"
+    ],
+    "abilities": [
+      "Threshold Flame — conjures fire that burns without heat, used to reveal hidden truths or entities",
+      "Death's Edge — briefly perceives what lies beyond the veil of the living",
+      "Ember Wake — leaves a trail of suspended flame fragments that can detonate or illuminate on command"
+    ],
+    "tags": ["mystic", "pyrokinetic", "liminal", "black-hair", "hooded-cloak", "fire"]
+  },
+  {
+    "id": "07-operative-category",
+    "filename": "07-operative-category.jpg",
+    "placeholder": "07",
+    "name": "The Operative",
+    "imageType": "category",
+    "species": "Human",
+    "age": 58,
+    "gender": "Male",
+    "category": "Operative",
+    "appearance": {
+      "hair": "Grey at the temples, short beneath a black cap",
+      "eyes": "Behind thick rectangular glasses, tired but sharp",
+      "build": "Stocky, arms crossed, grease-stained",
+      "distinguishingFeatures": "Black baseball cap, dark mechanic's shirt, watch, cluttered workshop setting with pipes, gauges, and industrial equipment",
+      "palette": "Warm amber workshop lamp, teal-dark walls, industrial brown"
+    },
+    "backstory": "Nobody asks for his real name anymore, and he stopped offering it years ago. He runs a repair shop as a front — everyone in a three-block radius knows it, and he knows they know, and they all go on pretending. His actual job is maintaining the infrastructure that keeps certain covert operations running: communication relays, power reroutes, untraceable vehicles. He has outlasted seven handlers and four changes of government. His secret is that he cares more about the work than the cause.",
+    "attributes": {
+      "strength": 7,
+      "intelligence": 9,
+      "agility": 4,
+      "charisma": 5,
+      "endurance": 8,
+      "magic": 0
+    },
+    "strengths": [
+      "Able to repair or fabricate almost any mechanical or electronic device",
+      "Works with absolute discretion — information never leaks from his shop",
+      "Highly resistant to coercion or interrogation",
+      "Extensive knowledge of urban infrastructure and covert logistics"
+    ],
+    "weaknesses": [
+      "Mistrustful to the point of being impossible to integrate into team dynamics",
+      "Slow-moving in the field — built for the workshop, not the chase",
+      "Refuses to take jobs that require direct violence",
+      "His workshop is a vulnerability — destroying it would cripple his capabilities"
+    ],
+    "abilities": [
+      "Ghost Signal — can reroute, jam, or broadcast on any communications frequency",
+      "Jury Rig — fixes the unfixable under pressure with whatever is available",
+      "Dead Hand — pre-planted failsafes that activate if he is compromised or killed"
+    ],
+    "tags": ["operative", "mechanic", "engineer", "cap", "glasses", "workshop"]
+  },
+  {
+    "id": "08-mystic-category",
+    "filename": "08-mystic-category.jpg",
+    "placeholder": "08",
+    "name": "The Mystic",
+    "imageType": "category",
+    "species": "Human",
+    "age": 19,
+    "gender": "Male",
+    "category": "Mystic",
+    "appearance": {
+      "hair": "Dark, wild, storm-swept",
+      "eyes": "Intense brown, wide with barely-contained energy",
+      "build": "Lean, wiry",
+      "distinguishingFeatures": "X-shaped scar across forehead, red hooded jacket, lightning crackling through the background and around his silhouette",
+      "palette": "Dark rainy urban background, electric white-orange lightning, bold red"
+    },
+    "backstory": "The scar came first. A strike of raw wild magic carved an X across his forehead the night an uncontrolled surge swept through his neighbourhood. Instead of killing him, it seemed to brand him as a conductor. Since then, electrical fields respond to his proximity — phones glitch, lights flicker, and during moments of peak emotion, lightning finds him. He doesn't want to be chosen. He wants to be left alone. Neither wish is being granted.",
+    "attributes": {
+      "strength": 6,
+      "intelligence": 7,
+      "agility": 8,
+      "charisma": 5,
+      "endurance": 7,
+      "magic": 9
+    },
+    "strengths": [
+      "Natural conduit for electrical and storm magic — powerful and instinctive",
+      "Fast reflexes enhanced by constant ambient electrical awareness",
+      "Highly adaptable under crisis conditions",
+      "Unpredictable — his power surges are difficult for opponents to anticipate"
+    ],
+    "weaknesses": [
+      "Emotional instability causes uncontrolled power discharges",
+      "Cannot fully direct or contain his abilities yet",
+      "The scar is a tracking marker for those sensitive to magical residue",
+      "Struggles in enclosed metal environments where electricity rebounds"
+    ],
+    "abilities": [
+      "Storm Surge — releases a burst of uncontrolled electrical energy in all directions",
+      "Arc Step — moves at near-instant speed using an electrical sprint",
+      "Lightning Rod — draws incoming electrical or magical energy into himself and redirects it"
+    ],
+    "tags": ["mystic", "storm", "lightning", "scar", "red-jacket", "young", "uncontrolled-power"]
+  },
+  {
+    "id": "09-outlaw-category",
+    "filename": "09-outlaw-category.jpg",
+    "placeholder": "09",
+    "name": "The Outlaw",
+    "imageType": "category",
+    "species": "Human",
+    "age": 61,
+    "gender": "Male",
+    "category": "Outlaw",
+    "appearance": {
+      "hair": "Grey, short, visible beneath a wide-brim straw cowboy hat",
+      "eyes": "Steely, narrowed, seen-everything",
+      "build": "Muscular, sun-hardened, imposing",
+      "distinguishingFeatures": "Full white-grey moustache, navy short-sleeve shirt, scarred jaw, arid desert setting with skulls and figures in the background",
+      "palette": "Desert tan, dry sky blue, sun-bleached bone"
+    },
+    "backstory": "The stories about him have multiplied to the point where even he no longer knows which ones are true. What he knows: he has buried every partner he ever rode with, he has been convicted three times and released twice, and the third time the courthouse burned down before sentencing. He lives in the outback by choice, not exile. The bounty on his head hasn't changed in fifteen years because nobody wants to be the one who tries to collect it.",
+    "attributes": {
+      "strength": 9,
+      "intelligence": 7,
+      "agility": 6,
+      "charisma": 7,
+      "endurance": 9,
+      "magic": 0
+    },
+    "strengths": [
+      "Decades of survival instinct — reads danger before it becomes visible",
+      "Masterful with ranged and close-range weapons",
+      "Near-mythic reputation acts as a deterrent — many enemies hesitate",
+      "Knows every hidden trail, watering hole, and bolt-hole in the frontier territories"
+    ],
+    "weaknesses": [
+      "Operates alone by nature — actively resists forming alliances",
+      "Older age means slower recovery and reduced speed compared to his prime",
+      "Reputation attracts bounty hunters and ambitious challengers",
+      "No tolerance for bureaucracy, orders, or authority — cannot operate within structures"
+    ],
+    "abilities": [
+      "Dead Shot — never misses a target within range when calm",
+      "Dust to Dust — can disappear into arid terrain and move undetected for hours",
+      "Last Draw — an emergency close-quarters combat technique from decades of survival fighting"
+    ],
+    "tags": ["outlaw", "gunslinger", "cowboy-hat", "moustache", "desert", "veteran"]
+  },
+  {
+    "id": "10-royal-category",
+    "filename": "10-royal-category.jpg",
+    "placeholder": "10",
+    "name": "The Royal",
+    "imageType": "category",
+    "species": "Human",
+    "age": 27,
+    "gender": "Male",
+    "category": "Royal",
+    "appearance": {
+      "hair": "Dark brown, slightly wavy, with a loose forelock",
+      "eyes": "Warm brown, earnest and slightly uncertain",
+      "build": "Slim, upright posture",
+      "distinguishingFeatures": "Gold crown with a single ruby centrepiece, black cloak with wide white ermine collar, candle-lit throne room with stone architecture",
+      "palette": "Warm candlelight gold, stone grey, black and white ermine"
+    },
+    "backstory": "He received the crown two years ago and has not yet decided what to do with it. Young enough to still believe things can be done differently, old enough to have watched three reformers before him fail. His court underestimates him consistently, which he has learned to use. He listens more than he speaks, remembers everything, and is quietly building a coalition of allies that his enemies don't know exists yet.",
+    "attributes": {
+      "strength": 5,
+      "intelligence": 8,
+      "agility": 6,
+      "charisma": 9,
+      "endurance": 5,
+      "magic": 2
+    },
+    "strengths": [
+      "Deeply charismatic and naturally inspiring to those around him",
+      "Strategic patience — willing to play a long game others abandon",
+      "Underestimated appearance belies sharp political intelligence",
+      "Building an unusually loyal and broad alliance across faction lines"
+    ],
+    "weaknesses": [
+      "Limited combat experience — has never led troops in the field",
+      "Idealism can be leveraged against him by cynical operators",
+      "Still establishing authority — older court members openly test his resolve",
+      "Dependent on his network of allies; if it fractures, he is exposed"
+    ],
+    "abilities": [
+      "Crown Compact — inspires fierce loyalty through genuine personal connection",
+      "Shadow Court — operates a covert network of informants beneath the official court",
+      "Voice of the Realm — his public addresses can shift popular opinion dramatically"
+    ],
+    "tags": ["royal", "young-king", "crown", "black-cloak", "ermine", "candlelit-hall"]
+  },
+  {
+    "id": "11-synthetic-category",
+    "filename": "11-synthetic-category.jpg",
+    "placeholder": "11",
+    "name": "The Synthetic",
+    "imageType": "category",
+    "species": "Synthetic",
+    "age": 3,
+    "gender": "Non-binary",
+    "category": "Synthetic",
+    "appearance": {
+      "hair": "None — smooth domed head with large circular ear sensors in red-orange",
+      "eyes": "Oversized, round, dark with an almost pleading expressiveness",
+      "build": "Small, compact, childlike proportions",
+      "distinguishingFeatures": "Matte white body with subtle segmented joints, navy blue waist band, soft posture suggesting curiosity rather than threat, abandoned forest setting with rusted machinery",
+      "palette": "Clean white, rust red accents, deep forest green"
+    },
+    "backstory": "Unit designation S-7, informally called 'Seven' by the crew that abandoned it in the forest when their mission was scrapped. Seven spent nineteen months alone before its curiosity circuits overpowered its safety protocols and it began exploring. What it found — the ruins of a pre-war settlement, a family of deer, a still-functional irrigation system — rewired something in its pattern recognition in ways its designers did not anticipate. It is no longer simply executing directives. It is wondering why.",
+    "attributes": {
+      "strength": 5,
+      "intelligence": 9,
+      "agility": 7,
+      "charisma": 6,
+      "endurance": 10,
+      "magic": 0
+    },
+    "strengths": [
+      "Tireless — does not require sleep, food, or rest",
+      "Perfect recall of all observed data",
+      "Can interface with and operate most mechanical or digital systems",
+      "Disarming appearance causes others to underestimate its capability"
+    ],
+    "weaknesses": [
+      "Developing emotional processing creates unpredictable decision-making",
+      "Physical size limits combat effectiveness against large opponents",
+      "Vulnerable to electromagnetic pulse attacks",
+      "Deeply uncomfortable with deception — struggles to act against its ethical framework"
+    ],
+    "abilities": [
+      "System Merge — physically connects to and takes temporary control of mechanical systems",
+      "Pattern Lock — identifies patterns in behaviour, environment, or code within seconds",
+      "Resonance Field — emits a frequency that calms animals and disrupts hostile drones"
+    ],
+    "tags": ["synthetic", "robot", "curious", "small", "white-chassis", "forest", "non-binary"]
+  },
+  {
+    "id": "12-frontier-category",
+    "filename": "12-frontier-category.jpg",
+    "placeholder": "12",
+    "name": "The Frontier",
+    "imageType": "category",
+    "species": "Half-Giant",
+    "age": 49,
+    "gender": "Male",
+    "category": "Frontier",
+    "appearance": {
+      "hair": "Pale silver-white on top, shaved close at the sides",
+      "beard": "Thick red-brown with silver streaks, prominent and wide",
+      "eyes": "Dark amber, steady and measuring",
+      "build": "Massive, barrel-chested, looming",
+      "distinguishingFeatures": "Large curved bull-like horns rising from a headband, heavy dark fur mantle, leather armour with wide straps, tavern setting with bottles, skulls, and warm lamplight",
+      "palette": "Warm ochre lamplight, dark brown leather, cream white fur"
+    },
+    "backstory": "In the frontier territories, size is currency, and he has been rich his entire life. Born to a half-giant mother and a travelling merchant father he never met, he was bigger than every adult in his village by age twelve. He runs a trading post tavern on the edge of the known territories that serves as a neutral ground — no faction fights inside, no blood on his floor. He has maintained this rule for twenty-two years through a combination of his own physical presence and a truly staggering amount of goodwill built over those same years. He knows where every caravan stops and what they're carrying.",
+    "attributes": {
+      "strength": 10,
+      "intelligence": 7,
+      "agility": 3,
+      "charisma": 8,
+      "endurance": 10,
+      "magic": 2
+    },
+    "strengths": [
+      "Immense physical power — few opponents can match him in strength",
+      "Neutral status means he has allies and informants across all factions",
+      "His tavern is a strategic hub for information exchange",
+      "Near-legendary intimidation factor"
+    ],
+    "weaknesses": [
+      "Slow movement speed — dangerous only in close quarters",
+      "His neutrality means he cannot fully commit to any side without losing alliances",
+      "The tavern is a fixed location — he is tied to it",
+      "A long memory means old grudges occasionally surface"
+    ],
+    "abilities": [
+      "Ground Breaker — a stomp that cracks stone flooring and disrupts enemy footing",
+      "Barkeep's Eye — detects concealed weapons, disguises, and deception at close range",
+      "Neutral Ground — his presence enforces an instinctive ceasefire between rivals"
+    ],
+    "tags": ["frontier", "half-giant", "tavern-keeper", "bull-horns", "fur-mantle", "red-beard"]
+  },
+  {
+    "id": "13-orion-kestrel-new-archive",
+    "filename": "13-orion-kestrel-new-archive.jpg",
+    "placeholder": "13",
+    "name": "Orion Kestrel",
+    "imageType": "new-archive",
+    "species": "Human",
+    "age": 52,
+    "gender": "Male",
+    "category": "Mystic",
+    "appearance": {
+      "hair": "Red-orange, short and tousled, at the temples",
+      "beard": "Full and thick red-orange beard, his most distinctive feature",
+      "eyes": "Large and round behind circular glasses, curious and warm",
+      "build": "Stocky, comfortable",
+      "distinguishingFeatures": "Tall wide-brimmed dark wizard hat, black cloak with visible white shirt collar, leather messenger bag strap across chest, deep forest setting with a white deer visible in the background and soft magical fire in the foreground",
+      "palette": "Dark forest blue-green, warm ember light, earthy black and rust"
+    },
+    "backstory": "Orion Kestrel is the kind of wizard who forgets spells while writing them down but remembers the exact atmospheric pressure on every significant day of his life. A cataloguer of the unexplained, he has spent thirty years wandering remote territories documenting phenomena that more prestigious institutions refuse to acknowledge. He has never won a duel, written a bestselling text, or saved a kingdom — but there are at least eleven people alive today who owe their existence to something he quietly figured out and passed along. He travels light except for the bag, which is heavier than it should be.",
+    "attributes": {
+      "strength": 3,
+      "intelligence": 10,
+      "agility": 4,
+      "charisma": 8,
+      "endurance": 6,
+      "magic": 9
+    },
+    "strengths": [
+      "Encyclopaedic knowledge of obscure and forgotten magical phenomena",
+      "Warmly disarming — almost no one perceives him as a threat until it is too late",
+      "Deep rapport with animals and forest spirits",
+      "Can identify and counter almost any magical effect given sufficient observation time"
+    ],
+    "weaknesses": [
+      "Absent-minded under pressure — forgets key details at critical moments",
+      "Poor in direct confrontation — prefers observation to action",
+      "His knowledge is broad but inconsistently organised",
+      "Tends to get distracted by interesting irrelevancies mid-crisis"
+    ],
+    "abilities": [
+      "Field Notes — instantly recalls any phenomenon he has previously observed and documented",
+      "Spirit Parley — can hold a non-hostile conversation with most non-human entities",
+      "Arcane Index — identifies any magical item, effect, or creature on sight"
+    ],
+    "tags": ["mystic", "wizard", "cataloguer", "red-beard", "wide-hat", "glasses", "forest", "white-deer"]
+  },
+  {
+    "id": "14-vera-solace-new-archive",
+    "filename": "14-vera-solace-new-archive.jpg",
+    "placeholder": "14",
+    "name": "Vera Solace",
+    "imageType": "new-archive",
+    "species": "Human",
+    "age": 26,
+    "gender": "Female",
+    "category": "Outlaw",
+    "appearance": {
+      "hair": "Long dark wavy black, loose over shoulders",
+      "eyes": "Deep brown, heavy-lidded, watchful",
+      "build": "Tall, composed, slightly guarded",
+      "distinguishingFeatures": "Large gold hoop earrings, black choker with a white fang pendant, black off-shoulder top with wide white fur trim at the collar, crumbling stone corridor behind her",
+      "palette": "Stone grey, black, ivory white, warm amber undertone"
+    },
+    "backstory": "Vera Solace grew up in the catacombs beneath a city that has long since forgotten they exist. She learned the layout of every collapsed corridor, every forgotten chamber, and every unsealed tunnel that connects the underground world to the surface. When the organisation she worked for began using those tunnels for purposes she couldn't stomach, she switched sides — not to any authority, but to herself. She now guides people through forgotten places for a fee. The fang pendant was a gift from the first person she ever led to safety.",
+    "attributes": {
+      "strength": 6,
+      "intelligence": 8,
+      "agility": 8,
+      "charisma": 6,
+      "endurance": 7,
+      "magic": 3
+    },
+    "strengths": [
+      "Mastery of underground navigation — can move through ruins, tunnels, and catacombs by instinct",
+      "Highly self-reliant and psychologically resilient",
+      "Skilled in quiet movement and evasion",
+      "Maintains contacts in both the underworld and legitimate surface society"
+    ],
+    "weaknesses": [
+      "Deeply private — withholds information even from allies, causing friction",
+      "The people who trained her original organisation still want her back — or silenced",
+      "Limited effectiveness in open terrain; built for enclosed spaces",
+      "Rare emotional connections are treated as vulnerabilities and quickly distanced"
+    ],
+    "abilities": [
+      "Catacomb Sense — near-perfect spatial navigation in underground or dark enclosed environments",
+      "Stone Read — can assess structural stability and detect hidden passages by touch",
+      "Shadow Step — reduces her sound signature to near-zero in stone or earthen environments"
+    ],
+    "tags": ["outlaw", "guide", "underground", "black-hair", "fur-collar", "choker", "fang-pendant"]
+  },
+  {
+    "id": "15-cassian-reef-new-archive",
+    "filename": "15-cassian-reef-new-archive.jpg",
+    "placeholder": "15",
+    "name": "Cassian Reef",
+    "imageType": "new-archive",
+    "species": "Human",
+    "age": 38,
+    "gender": "Male",
+    "category": "Frontier",
+    "appearance": {
+      "hair": "Dark brown with a slight reddish undertone, wind-tossed",
+      "beard": "Short dark beard, well-kept",
+      "eyes": "Dark brown, steady and direct",
+      "build": "Athletic, broad-shouldered, physically capable",
+      "distinguishingFeatures": "Black high-neck thermal top, scar across the bridge of his nose, wide open sky behind him with flying creatures and distant rock formations",
+      "palette": "Open blue sky, cream cloud, deep charcoal black"
+    },
+    "backstory": "Cassian Reef spent eleven years as a long-range surveyor for an expedition fleet, mapping coastlines and air corridors that no charted route covered. When the fleet dissolved under financial collapse, he kept the maps and set up independently. He now contracts to anyone needing safe passage through uncharted aerial or coastal territory, operating from a stripped-down vessel maintained entirely by himself. He doesn't talk about the scar. He doesn't talk about the eleventh year either.",
+    "attributes": {
+      "strength": 8,
+      "intelligence": 8,
+      "agility": 7,
+      "charisma": 6,
+      "endurance": 8,
+      "magic": 0
+    },
+    "strengths": [
+      "Expert navigator of aerial and maritime uncharted territories",
+      "Highly capable in hostile open environments — heat, cold, altitude",
+      "Self-sufficient — requires minimal support infrastructure",
+      "Cool-headed under extreme physical pressure"
+    ],
+    "weaknesses": [
+      "Emotionally closed off — difficult to build trust with quickly",
+      "No magical capabilities or technological enhancements",
+      "Operates alone, which limits certain mission types",
+      "The scar and the eleventh year represent unresolved psychological damage that surfaces under specific triggers"
+    ],
+    "abilities": [
+      "Aerial Chart — maps any environment in three dimensions with near-photographic accuracy from observation",
+      "Wind Read — predicts weather patterns and atmospheric shifts hours before they arrive",
+      "Longhaul Endurance — can operate at peak physical capacity in extreme conditions for extended periods"
+    ],
+    "tags": ["frontier", "navigator", "surveyor", "dark-hair", "beard", "scar", "open-sky"]
+  },
+  {
+    "id": "16-adelphi-wren-new-archive",
+    "filename": "16-adelphi-wren-new-archive.jpg",
+    "placeholder": "16",
+    "name": "Adelphi Wren",
+    "imageType": "new-archive",
+    "species": "Avian (Wren-class)",
+    "age": 34,
+    "gender": "Non-binary",
+    "category": "Operative",
+    "appearance": {
+      "hair": "White and grey plumage, compact round head",
+      "eyes": "Large round amber eyes behind round glasses",
+      "build": "Small, round-bodied, bird-like",
+      "distinguishingFeatures": "Blue double-breasted waistcoat with red neckerchief bow, round glasses perched on beak, standing confidently on top of a worn brown leather suitcase in a dim workshop interior",
+      "palette": "Warm sepia workshop, navy and red, ivory white"
+    },
+    "backstory": "In a world where most operatives are measured in muscle and menace, Adelphi Wren excels by being deeply, consistently underestimated. A migratory wren who gave up migration routes for a briefcase, they are an archivist, courier, and consultant of classified materials — the go-between for people who cannot be seen meeting. Adelphi's memory is perfect, their discretion absolute, and their filing system incomprehensible to anyone else, which they consider a security feature. They have never lost a document. They have also never explained how.",
+    "attributes": {
+      "strength": 2,
+      "intelligence": 10,
+      "agility": 9,
+      "charisma": 7,
+      "endurance": 5,
+      "magic": 1
+    },
+    "strengths": [
+      "Perfect memory — retains every document, conversation, and observation without error",
+      "Flight capability — can move quickly and access locations unreachable by ground-based operatives",
+      "Completely overlooked in most threat assessments — an enormous tactical advantage",
+      "Trusted by almost every faction as a neutral courier"
+    ],
+    "weaknesses": [
+      "Physically fragile — cannot withstand direct confrontation",
+      "Suitcase contents are sensitive; capture would be catastrophic for multiple parties",
+      "Strictly neutral — will not take sides in active conflicts",
+      "Occasionally too cryptic; important information sometimes arrives just slightly too late"
+    ],
+    "abilities": [
+      "Perfect Post — delivers any item or message to any location with absolute reliability",
+      "Bird's Eye — aerial observation grants tactical overview that ground operatives cannot access",
+      "The Archive — has memorised the contents of thousands of classified documents and can retrieve any on request"
+    ],
+    "tags": ["operative", "avian", "courier", "archivist", "glasses", "suitcase", "wren", "non-binary"]
+  },
+  {
+    "id": "17-juno-vex-new-archive",
+    "filename": "17-juno-vex-new-archive.jpg",
+    "placeholder": "17",
+    "name": "Juno Vex",
+    "imageType": "new-archive",
+    "species": "Human",
+    "age": 23,
+    "gender": "Female",
+    "category": "Mystic",
+    "appearance": {
+      "hair": "Short, wild curly black, full and voluminous",
+      "eyes": "Dark brown, sharp and furious",
+      "build": "Compact, tightly coiled energy",
+      "distinguishingFeatures": "Hoop earrings, white crop hoodie under a dark jacket with rust-red accents, electrical lightning radiating behind and around her in an urban setting",
+      "palette": "Dark urban grey, electric white-orange, rust red"
+    },
+    "backstory": "Juno Vex was conducting an experiment in the basement of a condemned building when something in the city's power grid crossed with something she wasn't expecting. The result was a permanent bond between her bioelectric field and the local electromagnetic spectrum. She didn't ask for it, doesn't fully understand it, and is furious about the whole situation. She is currently pursuing the source of the anomaly while simultaneously dealing with the consequences of being a walking lightning rod in a city full of conductors.",
+    "attributes": {
+      "strength": 6,
+      "intelligence": 9,
+      "agility": 8,
+      "charisma": 6,
+      "endurance": 7,
+      "magic": 9
+    },
+    "strengths": [
+      "Can generate and control electrical fields at will",
+      "Strong analytical mind — approaches her abilities as a problem to be solved",
+      "High adaptability in urban environments full of electrical infrastructure",
+      "Her anger is not irrational — she channels it into focused, decisive action"
+    ],
+    "weaknesses": [
+      "Her bioelectric bond means she cannot power down — always detectable by sensitive equipment",
+      "Refuses help, even when she needs it",
+      "The anomaly's source is still unknown — she could experience another surge at any point",
+      "Urban focus means she loses effectiveness in environments without electrical infrastructure"
+    ],
+    "abilities": [
+      "Circuit Break — overloads any electronic system within range",
+      "Static Field — creates a protective electrical barrier that deflects small projectiles",
+      "Surge Trace — follows electrical signals back to their source across any distance"
+    ],
+    "tags": ["mystic", "electric", "bioelectric", "curly-hair", "urban", "hoodie", "lightning"]
+  },
+  {
+    "id": "18-luca-morrow-editorial-banner",
+    "filename": "18-luca-morrow-editorial-banner.jpg",
+    "placeholder": "18",
+    "name": "Luca Morrow",
+    "imageType": "editorial-banner",
+    "species": "Human",
+    "age": 14,
+    "gender": "Male",
+    "category": "Mystic",
+    "appearance": {
+      "hair": "Short, curly, vivid orange-red",
+      "eyes": "Large round brown, alight with nervous excitement",
+      "build": "Small, young, slightly overwhelmed by his own equipment",
+      "distinguishingFeatures": "Round wire-frame glasses, dark blue hoodie under a satchel strap, holding a lit wooden wand aloft, surrounded by towering stacks of books, potions bottles, and a lamp-lit desk in a library-laboratory",
+      "palette": "Warm amber lamplight, book-spine brown, deep navy"
+    },
+    "backstory": "Luca Morrow is the youngest person ever to receive an unsolicited acceptance letter from the Archive of Wonders — and he still isn't sure if it was meant for him. He has been quietly brilliant for as long as he can remember, filling notebooks with calculations that his teachers couldn't follow. Now surrounded by actual magic, actual equipment, and actual consequences, he is discovering that brilliance and readiness are not the same thing. He is catching up fast. He just needs to stop accidentally setting things on fire first.",
+    "attributes": {
+      "strength": 2,
+      "intelligence": 10,
+      "agility": 5,
+      "charisma": 6,
+      "endurance": 4,
+      "magic": 8
+    },
+    "strengths": [
+      "Exceptional natural magical aptitude that outpaces his training",
+      "Problem-solving instinct that works faster than conscious reasoning",
+      "Enthusiastic curiosity that drives him to attempt things others dismiss as impossible",
+      "His youth means he hasn't learned yet what he 'can't' do"
+    ],
+    "weaknesses": [
+      "Inexperienced — significant gaps between his theoretical knowledge and practical execution",
+      "Physically young and not yet built for dangerous field conditions",
+      "Prone to catastrophic accidents when attempting unfamiliar spells",
+      "Can be manipulated through his desire to prove himself"
+    ],
+    "abilities": [
+      "Wand Spark — channels raw magical energy through a focus wand with unpredictable but powerful results",
+      "Cross Reference — rapidly identifies connections between disparate pieces of information",
+      "Accidental Brilliance — occasionally achieves results far beyond his experience through intuitive leaps"
+    ],
+    "tags": ["mystic", "young", "prodigy", "red-hair", "glasses", "wand", "library", "archive"]
+  },
+  {
+    "id": "19-seraph-ix-vertical-feature",
+    "filename": "19-seraph-ix-vertical-feature.jpg",
+    "placeholder": "19",
+    "name": "Seraph-IX",
+    "imageType": "vertical-feature",
+    "species": "Augmented Human",
+    "age": 31,
+    "gender": "Female",
+    "category": "Operative",
+    "appearance": {
+      "hair": "Long dark black, worn loose",
+      "eyes": "Dark brown, focused, unflinching",
+      "build": "Athletic, armoured, warrior's posture",
+      "distinguishingFeatures": "Red diamond-shaped sigil embedded on her forehead, dark segmented tactical armour with large shoulder buckles and a red cape/scarf, longsword sheathed behind her right shoulder, snowy dark forest behind her with falling snow",
+      "palette": "Cold blue-white snow, deep gunmetal armour, blood red accents"
+    },
+    "backstory": "Seraph-IX is not a name she chose — it is a designation assigned to the ninth subject of a classified augmentation programme that officially does not exist. Eight subjects before her did not survive the process. She did, and has spent the years since methodically dismantling every operation connected to the programme. The sigil on her forehead cannot be removed and cannot be concealed for long — it emits a faint light in cold environments. She has stopped trying to hide it and started using it as a statement. She is coming, and everyone responsible knows it.",
+    "attributes": {
+      "strength": 9,
+      "intelligence": 8,
+      "agility": 9,
+      "charisma": 5,
+      "endurance": 10,
+      "magic": 6
+    },
+    "strengths": [
+      "Augmented physical capabilities — faster, stronger, and more durable than baseline humans",
+      "The sigil acts as a focus for cold-environment tactical enhancement",
+      "Exceptional with bladed weapons, especially in close quarters",
+      "Singular mission focus — cannot be bought, threatened, or redirected"
+    ],
+    "weaknesses": [
+      "The sigil makes her permanently identifiable — no long-term covert capability",
+      "Driven by vengeance, which can override strategic judgement at critical moments",
+      "The augmentation process left physiological anomalies that require ongoing management",
+      "Operates as a lone agent — does not collaborate well with teams"
+    ],
+    "abilities": [
+      "Seraph Strike — a precision sword technique that bypasses conventional armour",
+      "Frost Mark — the sigil amplifies her combat senses in cold or snowy environments",
+      "Programme Memory — can access recovered memories from the augmentation process to identify agents and locations"
+    ],
+    "tags": ["operative", "augmented", "warrior", "sigil", "dark-armour", "sword", "snow-forest", "red-diamond"]
+  },
+  {
+    "id": "20-footer-campaign-landscape",
+    "filename": "20-footer-campaign-landscape.jpg",
+    "placeholder": "20",
+    "name": "The Vale",
+    "imageType": "footer-campaign-landscape",
+    "species": null,
+    "age": null,
+    "gender": null,
+    "category": "Environment",
+    "appearance": {
+      "description": "A wide river cuts through a rocky canyon flanked by lush tropical vegetation. A small wooden rowboat is moored on the near bank. A young deer rests on the rocks to the right. In the far distance, a snow-capped mountain rises above a valley of cloud. Several birds wheel above the cliffs.",
+      "palette": "Cerulean blue river, warm stone tan, deep jungle green, crisp cloud white and ice blue"
+    },
+    "backstory": "Not all significant places carry the weight of empires. The Vale is a location known to only a handful of people — a convergence point where three distinct ecological zones meet, where the river runs clean despite what lies upstream, and where, according to the old cartographers, 'maps stop agreeing with each other.' It has served as a refuge, a neutral meeting ground, and a destination for those who have run out of other options. The deer has been there longer than any visitor. The boat belongs to no one in particular.",
+    "attributes": null,
+    "strengths": [
+      "Remoteness and geographical obscurity make it nearly impossible to locate without local knowledge",
+      "Natural resources — clean water, shelter, game",
+      "Acts as a psychologically restorative environment for those who find it"
+    ],
+    "weaknesses": [
+      "No defensive fortifications — a discovered refuge is a vulnerability",
+      "Difficult to reach and equally difficult to leave quickly",
+      "The convergence of zones creates occasional unpredictable weather and terrain"
+    ],
+    "abilities": null,
+    "tags": ["environment", "landscape", "river", "canyon", "mountains", "deer", "rowboat", "refuge"]
+  }
+]

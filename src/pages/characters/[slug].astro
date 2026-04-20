@@ -1,76 +1,67 @@
 ---
-import { getCollection, render } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import { characters, getRelatedCharacters } from "../../data/characterCatalog";
 
 export async function getStaticPaths() {
-  const characters = await getCollection("characters");
-
-  return characters.map((entry) => ({
-    params: { slug: entry.slug },
-    props: { entry, characters }
+  return characters.map((character) => ({
+    params: { slug: character.slug },
+    props: {
+      character,
+      related: getRelatedCharacters(character)
+    }
   }));
 }
 
-const { entry, characters } = Astro.props;
-const { Content } = await render(entry);
+const { character, related } = Astro.props;
 const basePath = import.meta.env.BASE_URL;
 
-const related = characters
-  .filter((candidate) => candidate.id !== entry.id)
-  .map((candidate) => ({
-    entry: candidate,
-    overlap: candidate.data.tags.filter((tag) => entry.data.tags.includes(tag)).length
-  }))
-  .filter(({ overlap }) => overlap > 0)
-  .sort((left, right) => right.overlap - left.overlap)
-  .slice(0, 3);
+const appearanceEntries = Object.entries(character.appearance ?? {}).filter(([, value]) => Boolean(value));
+const attributeEntries = Object.entries(character.attributes ?? {});
+const secondaryImages = character.images.slice(1);
+const labelize = (value: string) =>
+  value
+    .replace(/([a-z])([A-Z])/g, "$1 $2")
+    .replace(/-/g, " ")
+    .replace(/\b\w/g, (letter) => letter.toUpperCase());
 ---
 
 <BaseLayout
-  title={`${entry.data.name} | AI Characters Showcase`}
-  description={entry.data.shortDescription}
+  title={`${character.name} | AI Characters Showcase`}
+  description={character.summary}
   pageClass="page-dossier"
 >
   <section class="dossier-hero">
     <div class="dossier-hero__poster">
       <img
-        src={`${basePath}${entry.data.heroImage.replace(/^\//, "")}`}
-        alt={`${entry.data.name} dossier art`}
+        src={`${basePath}${character.primaryImage.src.replace(/^\//, "")}`}
+        alt={`${character.name} character image`}
       />
     </div>
 
     <div class="dossier-hero__body">
-      <p class="eyebrow">Dossier / {entry.slug}</p>
-      <h1>{entry.data.name}</h1>
-      <p class="dossier-hero__role">{entry.data.role}</p>
-      <p class="dossier-hero__summary">{entry.data.shortDescription}</p>
+      <p class="eyebrow">Character File / {character.slug}</p>
+      <h1>{character.name}</h1>
+      <p class="dossier-hero__role">{character.category} / {character.species}</p>
+      <p class="dossier-hero__summary">{character.summary}</p>
 
       <dl class="dossier-grid">
-        {entry.data.world && (
-          <div>
-            <dt>World</dt>
-            <dd>{entry.data.world}</dd>
-          </div>
-        )}
-        {entry.data.region && (
-          <div>
-            <dt>Region</dt>
-            <dd>{entry.data.region}</dd>
-          </div>
-        )}
-        {entry.data.faction && (
-          <div>
-            <dt>Faction</dt>
-            <dd>{entry.data.faction}</dd>
-          </div>
-        )}
         <div>
-          <dt>Signals</dt>
-          <dd>{entry.data.tags.join(" / ")}</dd>
+          <dt>Age</dt>
+          <dd>{character.age}</dd>
+        </div>
+        <div>
+          <dt>Gender</dt>
+          <dd>{character.gender}</dd>
+        </div>
+        <div>
+          <dt>Category</dt>
+          <dd>{character.category}</dd>
+        </div>
+        <div>
+          <dt>Tags</dt>
+          <dd>{character.tags.join(" / ")}</dd>
         </div>
       </dl>
-
-      {entry.data.featuredQuote && <blockquote class="dossier-quote">{entry.data.featuredQuote}</blockquote>}
 
       <div class="dossier-hero__actions">
         <a class="button button--primary" href={basePath}>Back to archive</a>
@@ -78,42 +69,135 @@ const related = characters
     </div>
   </section>
 
+  {secondaryImages.length > 0 && (
+    <section class="section dossier-section">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Image Set</p>
+          <h2>Supporting visuals</h2>
+        </div>
+        <p class="section-heading__text">
+          Additional sample imagery attached to this character from the JSON catalog.
+        </p>
+      </div>
+
+      <div class="image-strip">
+        {secondaryImages.map((image) => (
+          <article class="image-strip__card">
+            <img src={`${basePath}${image.src.replace(/^\//, "")}`} alt={`${character.name} ${image.type}`} loading="lazy" />
+            <div>
+              <p>{labelize(image.type)}</p>
+              <h3>Placeholder {image.placeholder}</h3>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+  )}
+
   <section class="section dossier-section">
     <div class="section-heading">
       <div>
-        <p class="eyebrow">Field Narrative</p>
-        <h2>Long-form profile</h2>
+        <p class="eyebrow">Profile</p>
+        <h2>Appearance and identity</h2>
       </div>
       <p class="section-heading__text">
-        Each dossier page is designed to hold lore, tone, and future media without collapsing the archive back into a single wall.
+        The new detail pages are generated directly from the JSON metadata rather than the older markdown dossiers.
       </p>
     </div>
 
-    <article class="prose-card">
-      <Content />
-    </article>
+    <div class="profile-grid">
+      <article class="prose-card">
+        <h3>Backstory</h3>
+        <p>{character.backstory}</p>
+      </article>
+
+      <article class="prose-card">
+        <h3>Appearance</h3>
+        <dl class="profile-facts">
+          {appearanceEntries.map(([key, value]) => (
+            <div>
+              <dt>{labelize(key)}</dt>
+              <dd>{value}</dd>
+            </div>
+          ))}
+        </dl>
+      </article>
+    </div>
+  </section>
+
+  {attributeEntries.length > 0 && (
+    <section class="section dossier-section">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Attributes</p>
+          <h2>Character profile metrics</h2>
+        </div>
+      </div>
+
+      <div class="stat-grid">
+        {attributeEntries.map(([key, value]) => (
+          <article class="stat-card">
+            <p>{labelize(key)}</p>
+            <strong>{value}</strong>
+          </article>
+        ))}
+      </div>
+    </section>
+  )}
+
+  <section class="section dossier-section">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">Capabilities</p>
+        <h2>Strengths, weaknesses, and abilities</h2>
+      </div>
+    </div>
+
+    <div class="profile-grid profile-grid--three">
+      <article class="prose-card list-card">
+        <h3>Strengths</h3>
+        <ul>
+          {character.strengths.map((item) => <li>{item}</li>)}
+        </ul>
+      </article>
+
+      <article class="prose-card list-card">
+        <h3>Weaknesses</h3>
+        <ul>
+          {character.weaknesses.map((item) => <li>{item}</li>)}
+        </ul>
+      </article>
+
+      <article class="prose-card list-card">
+        <h3>Abilities</h3>
+        <ul>
+          {character.abilities.map((item) => <li>{item}</li>)}
+        </ul>
+      </article>
+    </div>
   </section>
 
   {related.length > 0 && (
     <section class="section dossier-section">
       <div class="section-heading">
         <div>
-          <p class="eyebrow">Related Signals</p>
-          <h2>Adjacent dossiers</h2>
+          <p class="eyebrow">Related Files</p>
+          <h2>Adjacent characters</h2>
         </div>
       </div>
 
       <div class="related-grid">
-        {related.map(({ entry: relatedEntry }) => (
-          <a class="related-card" href={`${basePath}characters/${relatedEntry.slug}/`}>
+        {related.map((relatedCharacter) => (
+          <a class="related-card" href={`${basePath}characters/${relatedCharacter.slug}/`}>
             <img
-              src={`${basePath}${relatedEntry.data.heroImage.replace(/^\//, "")}`}
-              alt={`${relatedEntry.data.name} poster art`}
+              src={`${basePath}${relatedCharacter.primaryImage.src.replace(/^\//, "")}`}
+              alt={`${relatedCharacter.name} related image`}
               loading="lazy"
             />
             <div>
-              <p>{relatedEntry.data.role}</p>
-              <h3>{relatedEntry.data.name}</h3>
+              <p>{relatedCharacter.category}</p>
+              <h3>{relatedCharacter.name}</h3>
             </div>
           </a>
         ))}
