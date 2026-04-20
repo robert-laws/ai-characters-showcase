@@ -808,6 +808,7 @@ h3 {
 
 .catalog-hero__signals {
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   justify-content: flex-start;
   gap: 0.5rem;
@@ -1086,7 +1087,7 @@ h3 {
   }
 
   .catalog-hero__signals {
-    flex-direction: column;
+    flex-direction: row;
     justify-content: flex-start;
   }
 }
