@@ -141,18 +141,20 @@ const heroShelfNote = `${heroFeature.name} anchors the current release with a ti
     <div class="category-grid">
       {categories.map((category, index) => (
         <article class="category-tile">
-          <MediaPlaceholder
-            number={category.placeholder}
-            label={categoryLabel(category)}
-            aspect="square"
-            tone={index % 3 === 0 ? "warm" : "cool"}
-            src={`${basePath}${category.image.src.replace(/^\//, "")}`}
-            alt={`${category.category} category sample image`}
-          />
-          <div class="category-tile__body">
-            <h3>{category.category}</h3>
-            <p>{category.name}</p>
-          </div>
+          <a href={`${basePath}signals/${category.slug}/`}>
+            <MediaPlaceholder
+              number={category.placeholder}
+              label={categoryLabel(category)}
+              aspect="square"
+              tone={index % 3 === 0 ? "warm" : "cool"}
+              src={`${basePath}${category.image.src.replace(/^\//, "")}`}
+              alt={`${category.category} category sample image`}
+            />
+            <div class="category-tile__body">
+              <h3>{category.category}</h3>
+              <p>{category.name}</p>
+            </div>
+          </a>
         </article>
       ))}
     </div>

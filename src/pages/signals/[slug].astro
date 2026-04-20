@@ -1,0 +1,120 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import MediaPlaceholder from "../../components/MediaPlaceholder.astro";
+import { categories, getSignalCollectionBySlug } from "../../data/characterCatalog";
+
+const signalDescriptions: Record<string, string> = {
+  operative: "Precision-built profiles shaped around covert roles, tactical discipline, and field-ready identities.",
+  mystic: "Dossiers centered on memory, omen, ritual, and the stranger edges of power.",
+  outlaw: "Characters defined by exile, salvage, smuggling, and the pressure of survival outside formal systems.",
+  royal: "Lineages, courts, succession, and characters whose image carries as much weight as their force.",
+  synthetic: "Constructed identities, machine-born instincts, and figures caught between code, personhood, and command.",
+  frontier: "Characters forged at the edge of mapped territory, where harsh terrain and unstable power shape the archive."
+};
+
+export function getStaticPaths() {
+  return categories.map((category) => ({
+    params: { slug: category.slug }
+  }));
+}
+
+const { slug = "" } = Astro.params;
+const signal = getSignalCollectionBySlug(slug);
+
+if (!signal) {
+  throw new Error(`Unknown signal slug: ${slug}`);
+}
+
+const basePath = import.meta.env.BASE_URL;
+const title = `${signal.category} Signal | AI Characters Showcase`;
+const description = `${signal.category} signal archive page featuring ${signal.count} character dossiers.`;
+const signalIntro =
+  signalDescriptions[signal.slug] ??
+  `${signal.category} groups the archive into a focused browsing rail so related characters can be explored as a collection.`;
+const relatedSignals = categories.filter((category) => category.slug !== signal.slug).slice(0, 3);
+---
+
+<BaseLayout title={title} description={description} pageClass="page-signal">
+  <section class="signal-hero">
+    <div class="signal-hero__media">
+      <MediaPlaceholder
+        number={signal.placeholder}
+        label={`${signal.category} / Signal collection`}
+        aspect="square"
+        tone="cool"
+        src={`${basePath}${signal.image.src.replace(/^\//, "")}`}
+        alt={`${signal.category} signal image`}
+      />
+    </div>
+
+    <div class="signal-hero__copy">
+      <p class="catalog-kicker">Signal Collection</p>
+      <div class="signal-hero__headline">
+        <p class="catalog-brand">Archive Navigation</p>
+        <h1>{signal.category}</h1>
+        <p>{signal.name}</p>
+        <p>{signalIntro}</p>
+      </div>
+
+      <div class="signal-hero__meta">
+        <div class="signal-count">
+          <p class="catalog-label">Active dossiers</p>
+          <strong>{signal.count}</strong>
+        </div>
+        <a class="button button--primary" href={`${basePath}#signals`}>
+          Back to signals
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="catalog-section">
+    <div class="catalog-section__heading">
+      <div>
+        <p class="catalog-kicker">Signal Dossiers</p>
+        <h2>{signal.category} entries in the archive</h2>
+      </div>
+      <p>
+        Every character below belongs to the {signal.category.toLowerCase()} signal and links into a dedicated dossier page.
+      </p>
+    </div>
+
+    <div class="signal-grid">
+      {signal.entries.map((entry) => (
+        <article class="catalog-card">
+          <a href={`${basePath}characters/${entry.slug}/`}>
+            <MediaPlaceholder
+              number={entry.primaryImage.placeholder}
+              label={`${entry.name} / ${signal.category} dossier`}
+              aspect="portrait"
+              tone="cool"
+              src={`${basePath}${entry.primaryImage.src.replace(/^\//, "")}`}
+              alt={`${entry.name} signal listing image`}
+            />
+            <div class="catalog-card__body">
+              <p class="catalog-card__eyebrow">{entry.tags.map((tag) => tag.replace(/-/g, " ")).join(" / ")}</p>
+              <h3>{entry.name}</h3>
+              <p>{entry.summary}</p>
+            </div>
+          </a>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="signal-links">
+    <div>
+      <p class="catalog-kicker">More Signals</p>
+      <h2>Continue through the archive</h2>
+    </div>
+
+    <div class="signal-links__grid">
+      {relatedSignals.map((category) => (
+        <a class="signal-links__card" href={`${basePath}signals/${category.slug}/`}>
+          <p class="catalog-label">{category.category}</p>
+          <p>{category.name}</p>
+        </a>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

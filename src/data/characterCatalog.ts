@@ -62,6 +62,11 @@ export type CategoryTile = {
   image: CharacterImage;
 };
 
+export type SignalCollection = CategoryTile & {
+  entries: CharacterRecord[];
+  count: number;
+};
+
 const imageTypesForCharacters = new Set([
   "hero",
   "product-card",
@@ -196,8 +201,35 @@ const characterByPlaceholder = new Map(
   characters.flatMap((character) => character.images.map((image) => [image.placeholder, character] as const))
 );
 const categoryByPlaceholder = new Map(categories.map((category) => [category.placeholder, category]));
+const categoryBySlugMap = new Map(categories.map((category) => [category.slug, category]));
 
 export const getCharacterBySlug = (slug: string) => characterBySlugMap.get(slug);
+
+export const getCategoryBySlug = (slug: string) => categoryBySlugMap.get(slug);
+
+export const getCharactersByCategorySlug = (slug: string) => {
+  const category = categoryBySlugMap.get(slug);
+  if (!category) {
+    return [];
+  }
+
+  return characters.filter((character) => character.category === category.category);
+};
+
+export const getSignalCollectionBySlug = (slug: string): SignalCollection | undefined => {
+  const category = categoryBySlugMap.get(slug);
+  if (!category) {
+    return undefined;
+  }
+
+  const entries = getCharactersByCategorySlug(slug);
+
+  return {
+    ...category,
+    entries,
+    count: entries.length
+  };
+};
 
 export const getRelatedCharacters = (character: CharacterRecord, limit = 3) =>
   characters
