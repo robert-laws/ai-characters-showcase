@@ -12,6 +12,9 @@ const footerLandscape = homeCatalog.footerLandscape;
 const categories = homeCatalog.categoryTiles;
 const getPlaceholderImagePath = (entry, placeholder) =>
   entry.images.find((image) => image.placeholder === placeholder)?.src ?? entry.primaryImage.src;
+const selectionLabel = (entry) => `${entry.name} / Character edition`;
+const categoryLabel = (category) => `${category.category} / Signal collection`;
+const archiveLabel = (entry) => `${entry.name} / Archive arrival`;
 const testimonials = [
   {
     title: "Collector Notes",
@@ -38,7 +41,7 @@ const basePath = import.meta.env.BASE_URL;
     <div class="catalog-hero__media">
       <MediaPlaceholder
         number="01"
-        label={`${heroFeature.name} hero placeholder`}
+        label={`${heroFeature.name} / Lead feature`}
         aspect="hero"
         tone="cool"
         src={`${basePath}${heroFeature.primaryImage.src.replace(/^\//, "")}`}
@@ -49,9 +52,9 @@ const basePath = import.meta.env.BASE_URL;
       <p class="catalog-kicker">Seasonal Character Edit</p>
       <div class="catalog-hero__headline">
         <p class="catalog-brand">AI Characters Showcase</p>
-        <h1>Reframing the archive like a premium release catalog.</h1>
+        <h1>Curated character releases, world files, and visual dossiers in one archive.</h1>
         <p>
-          This first adaptation borrows the editorial-commerce structure from your reference while keeping the current dossiers, tags, and profile routes intact.
+          Explore cinematic character profiles as if each one arrived in a seasonal drop: featured portraits, category-led browsing, and dedicated files built for lore, attributes, and visual identity.
         </p>
       </div>
 
@@ -75,7 +78,7 @@ const basePath = import.meta.env.BASE_URL;
         <h2>Spring file selections</h2>
       </div>
       <p>
-        The first row mirrors the product-grid rhythm from the reference, but each card maps to an existing dossier and detail page.
+        A front-row edit of the current lead characters, presented as collectible releases with direct paths into their full dossiers.
       </p>
     </div>
 
@@ -85,7 +88,7 @@ const basePath = import.meta.env.BASE_URL;
           <a href={`${basePath}characters/${entry.slug}/`}>
             <MediaPlaceholder
               number={String(index + 2).padStart(2, "0")}
-              label={`${entry.name} product card placeholder`}
+              label={selectionLabel(entry)}
               aspect="portrait"
               tone={index % 2 === 0 ? "dark" : "cool"}
               src={`${basePath}${getPlaceholderImagePath(entry, String(index + 2).padStart(2, "0")).replace(/^\//, "")}`}
@@ -106,9 +109,9 @@ const basePath = import.meta.env.BASE_URL;
     <div class="catalog-section__heading">
       <div>
         <p class="catalog-kicker">Browse By Signal</p>
-        <h2>Shop the archive by category</h2>
+        <h2>Browse the archive by signal</h2>
       </div>
-      <p>Each tile is a stand-in for future image-led category entry points. The count still reflects the real tagged dossiers already in the archive.</p>
+      <p>Each signal groups the archive by archetype, giving the page a stronger browsing rhythm before you ever open an individual character file.</p>
     </div>
 
     <div class="category-grid">
@@ -116,7 +119,7 @@ const basePath = import.meta.env.BASE_URL;
         <article class="category-tile">
           <MediaPlaceholder
             number={category.placeholder}
-            label={`${category.category} category placeholder`}
+            label={categoryLabel(category)}
             aspect="square"
             tone={index % 3 === 0 ? "warm" : "cool"}
             src={`${basePath}${category.image.src.replace(/^\//, "")}`}
@@ -135,9 +138,9 @@ const basePath = import.meta.env.BASE_URL;
     <div class="catalog-section__heading">
       <div>
         <p class="catalog-kicker">Recent Additions</p>
-        <h2>Shop new in the archive</h2>
+        <h2>New to the archive</h2>
       </div>
-      <p>Another five-card run to mirror the second commerce rail in the reference while keeping the current character data central.</p>
+      <p>Fresh arrivals in the catalog, framed as recent additions so the archive can grow without losing its editorial structure.</p>
     </div>
 
     <div class="catalog-grid catalog-grid--five">
@@ -146,7 +149,7 @@ const basePath = import.meta.env.BASE_URL;
           <a href={`${basePath}characters/${entry.slug}/`}>
             <MediaPlaceholder
               number={String(index + 13).padStart(2, "0")}
-              label={`${entry.name} new archive placeholder`}
+              label={archiveLabel(entry)}
               aspect="portrait"
               tone={index % 2 === 0 ? "cool" : "warm"}
               src={`${basePath}${getPlaceholderImagePath(entry, String(index + 13).padStart(2, "0")).replace(/^\//, "")}`}
@@ -184,14 +187,14 @@ const basePath = import.meta.env.BASE_URL;
   <section class="editorial-band">
     <div class="editorial-band__copy">
       <p class="catalog-kicker">Campaign Feature</p>
-      <h2>{highlight.name}, recast as a full-width editorial story.</h2>
+      <h2>{highlight.name}, presented as a full-width campaign feature.</h2>
       <p>
-        This band stands in for the oversized photographic modules in the reference. Placeholder 18 can later become a campaign still, a collage, or a motion frame.
+        This section gives the archive a slower, more immersive beat between card rails: one character, one wide-format moment, and room for mood over metadata.
       </p>
     </div>
     <MediaPlaceholder
       number="18"
-      label={`${highlight.name} editorial banner placeholder`}
+      label={`${highlight.name} / Editorial feature`}
       aspect="banner"
       tone="dark"
       src={`${basePath}${highlight.primaryImage.src.replace(/^\//, "")}`}
@@ -201,20 +204,20 @@ const basePath = import.meta.env.BASE_URL;
 
   <section class="editorial-split" id="field-notes">
     <div class="editorial-split__copy">
-      <p class="catalog-kicker">Layout Translation</p>
-      <h2>Content crossover without losing the dossier logic.</h2>
+      <p class="catalog-kicker">Field Notes</p>
+      <h2>Every image-led moment still resolves into a deeper character file.</h2>
       <p>
-        The structure now follows an editorial storefront rhythm, but each section still cross-links back to the existing character archive instead of pretending to be static mock content.
+        The visual language is more fashion-editorial than database, but the underlying goal stays the same: each character can support biography, powers, weaknesses, and world context without feeling flat.
       </p>
       <ul class="editorial-split__list">
-        <li>Placeholder 19 can become an anchored portrait or lookbook crop.</li>
-        <li>The metadata blocks can later evolve into pricing, editions, or release tags if you want a harder commerce feel.</li>
-        <li>All cards still point to the existing dossier routes, so the current content model remains useful.</li>
+        <li>Portrait-led slots can become anchored image essays for major characters.</li>
+        <li>The metadata strips can evolve into editions, factions, or release collections later.</li>
+        <li>Every card already routes into a dedicated JSON-backed character page.</li>
       </ul>
     </div>
     <MediaPlaceholder
       number="19"
-      label={`${verticalFeature.name} vertical feature placeholder`}
+      label={`${verticalFeature.name} / Portrait feature`}
       aspect="tall"
       tone="warm"
       src={`${basePath}${verticalFeature.primaryImage.src.replace(/^\//, "")}`}
@@ -225,17 +228,17 @@ const basePath = import.meta.env.BASE_URL;
   <section class="footer-feature">
     <MediaPlaceholder
       number="20"
-      label="Footer campaign landscape placeholder"
+      label="The Vale / Closing landscape"
       aspect="wide"
       tone="cool"
       src={`${basePath}${footerLandscape.src.replace(/^\//, "")}`}
       alt="Footer campaign landscape image"
     />
     <div class="footer-feature__copy">
-      <p class="catalog-kicker">Next Iteration</p>
-      <h2>Placeholder 20 closes the page like a campaign footer.</h2>
+      <p class="catalog-kicker">Closing Frame</p>
+      <h2>A final landscape gives the archive a cinematic landing instead of a hard stop.</h2>
       <p>
-        Once this structure feels right, we can refine the spacing, convert placeholders into real asset slots, and decide which sections should stay editorial versus become functional archive navigation.
+        From here we can keep refining the voice, replace more sample imagery, and decide which sections should stay purely editorial versus become navigation for larger collections.
       </p>
     </div>
   </section>
