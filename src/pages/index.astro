@@ -15,6 +15,11 @@ const getPlaceholderImagePath = (entry, placeholder) =>
 const selectionLabel = (entry) => `${entry.name} / Character edition`;
 const categoryLabel = (category) => `${category.category} / Signal collection`;
 const archiveLabel = (entry) => `${entry.name} / Archive arrival`;
+const formatSignal = (value) =>
+  value
+    .replace(/-/g, " ")
+    .replace(/\b\w/g, (letter) => letter.toUpperCase());
+const heroSignals = [heroFeature.category, heroFeature.species, ...heroFeature.tags.slice(0, 2).map(formatSignal)];
 const testimonials = [
   {
     title: "Collector Notes",
@@ -30,6 +35,8 @@ const testimonials = [
   }
 ];
 const basePath = import.meta.env.BASE_URL;
+const heroInsetSrc = `${basePath}images/layout-samples/21-auric-vale-supporting-inset.jpg`;
+const heroShelfNote = `${heroFeature.name} anchors the current release with a tighter field-file portrait, a sharper read on the lead dossier, and a cleaner bridge into the archive.`;
 ---
 
 <BaseLayout
@@ -47,6 +54,23 @@ const basePath = import.meta.env.BASE_URL;
         src={`${basePath}${heroFeature.primaryImage.src.replace(/^\//, "")}`}
         alt={`${heroFeature.name} sample hero image`}
       />
+      <div class="catalog-hero__shelf">
+        <div class="catalog-hero__inset">
+          <img src={heroInsetSrc} alt={`${heroFeature.name} supporting inset portrait`} loading="lazy" />
+        </div>
+        <div class="catalog-hero__shelf-copy">
+          <p class="catalog-label">Archive note</p>
+          <p>{heroShelfNote}</p>
+        </div>
+        <div class="catalog-hero__signals" aria-label={`${heroFeature.name} signal tags`}>
+          {heroSignals.map((signal) => (
+            <span class="catalog-signal">{signal}</span>
+          ))}
+        </div>
+        <a class="catalog-hero__shelf-link" href={`${basePath}characters/${heroFeature.slug}/`}>
+          Read field notes
+        </a>
+      </div>
     </div>
     <div class="catalog-hero__copy">
       <p class="catalog-kicker">Seasonal Character Edit</p>
