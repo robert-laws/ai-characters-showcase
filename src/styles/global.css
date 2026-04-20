@@ -744,6 +744,7 @@ h3 {
 .catalog-hero {
   display: grid;
   grid-template-columns: minmax(0, 1.45fr) minmax(300px, 0.75fr);
+  align-items: start;
   gap: 1.25rem;
   padding-top: 1rem;
 }
@@ -1002,6 +1003,31 @@ h3 {
 @media (min-width: 1280px) {
   .catalog-hero__media .media-placeholder--hero {
     aspect-ratio: 21 / 9;
+  }
+}
+
+@media (min-width: 1500px) {
+  .catalog-hero {
+    grid-template-columns: minmax(0, 1.35fr) minmax(420px, 0.9fr);
+    gap: 1.5rem;
+  }
+
+  .catalog-hero__copy {
+    gap: 1.75rem;
+    padding: 1.75rem;
+  }
+
+  .catalog-hero__headline {
+    gap: 0.85rem;
+  }
+
+  .catalog-hero__headline h1 {
+    max-width: 10ch;
+    font-size: clamp(3.1rem, 4vw, 4.45rem);
+  }
+
+  .catalog-hero__headline p:last-child {
+    max-width: 34ch;
   }
 }
 
