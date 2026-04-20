@@ -748,6 +748,22 @@ h3 {
   padding-top: 1rem;
 }
 
+.catalog-hero__media {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.04)),
+    linear-gradient(180deg, rgba(142, 202, 230, 0.18), rgba(33, 158, 188, 0.08));
+  box-shadow: var(--shadow);
+  padding: 0.9rem;
+}
+
+.catalog-hero__media .media-placeholder {
+  border-radius: calc(var(--radius-lg) - 4px);
+}
+
 .catalog-hero__copy,
 .catalog-card,
 .category-tile,
@@ -980,6 +996,12 @@ h3 {
   .profile-grid--three,
   .stat-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 1280px) {
+  .catalog-hero__media .media-placeholder--hero {
+    aspect-ratio: 21 / 9;
   }
 }
 
